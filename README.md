@@ -1,5 +1,31 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Supabase Auth
+
+This app uses Supabase Auth with server actions and middleware protection.
+
+Required env vars:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+```
+
+Optional (used for auth email redirects if `origin` is not available):
+
+```
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+Database setup:
+- Run `supabase/setup.sql` to create auth scaffolding (profiles, roles, user_roles, specialties) with RLS.
+- Run `supabase/domain.sql` to create application tables (patients, encounters, encounter_artifacts).
+- Run `supabase/bootstrap_admin.sql` once to create the initial admin user.
+
+Auth model: users are created by admins only. Disable public sign-ups in your
+Supabase Auth settings.
+
 ## Getting Started
 
 First, run the development server:

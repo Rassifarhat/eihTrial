@@ -1,0 +1,23 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "Encounter contains interpreter introductions. Physician asked the patient about back pain and duration. Patient response did not answer the question and instead asked about delay in translation. No details provided about symptoms, onset, location, severity, or associated features.",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Primary reason for visit / chief complaint",
+    "Confirmation of presence or absence of back pain",
+    "Onset and duration of symptoms",
+    "Location and radiation of pain",
+    "Severity (pain scale) and character",
+    "Aggravating and relieving factors",
+    "Associated symptoms (numbness, weakness, bowel/bladder dysfunction, fever)",
+    "Prior treatments and response",
+    "Current medications and allergies",
+    "Relevant past medical history (e.g., spine disease, surgeries)",
+    "Social history (work, tobacco, substance use)",
+    "Physical examination findings",
+    "Vital signs",
+    "Imaging or diagnostic studies if any"
+  ]
+}

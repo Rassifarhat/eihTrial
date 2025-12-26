@@ -1,0 +1,22 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "unknown",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "patient chief complaint",
+    "details and duration of current symptoms",
+    "relevant review of systems",
+    "past medical history",
+    "current medications",
+    "allergies",
+    "vital signs and physical exam findings",
+    "diagnostic test results (if any)",
+    "provider's assessment/diagnosis",
+    "treatment plan and prescriptions",
+    "follow-up instructions and timing",
+    "patient demographics (age, sex)",
+    "language preference confirmation"
+  ]
+}

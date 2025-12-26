@@ -1,0 +1,16 @@
+{
+  "sessionId": "10dfda26-18b1-4c44-a1a6-adcc3e163cd0",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "c532f9d0-2672-4028-bf29-ecad211232c2",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766754481486,
+      "outputEnglish": "How does your back feel today?"
+    }
+  ],
+  "savedAt": "2025-12-26T13:08:14.512Z"
+}

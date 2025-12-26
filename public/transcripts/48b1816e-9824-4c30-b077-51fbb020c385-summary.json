@@ -1,0 +1,22 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "unknown",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "chief complaint (patient's reason for visit/symptoms)",
+    "history of present illness (onset, duration, character, severity, progression, relieving/exacerbating factors)",
+    "past medical history",
+    "current medications",
+    "allergies",
+    "family history",
+    "social history (tobacco, alcohol, substance use, occupation)",
+    "vital signs",
+    "physical examination findings",
+    "diagnostic tests/labs/imaging results",
+    "working diagnosis",
+    "treatment plan or interventions",
+    "follow-up instructions and timing"
+  ]
+}

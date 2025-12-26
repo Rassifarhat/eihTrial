@@ -1,0 +1,18 @@
+{
+  "chief_complaint": "Mild foot pain",
+  "history_of_present_illness": "Patient reports foot pain after an injury for 2 days. No clear description of the mechanism provided in the conversation. No X-ray has been performed yet.",
+  "assessment": "Foot pain following reported injury 2 days ago. Laterality and mechanism are unclear. Possible soft tissue injury or fracture — imaging indicated to evaluate.",
+  "plan": "Obtain foot X-ray (patient instructed to go downstairs for X-ray and return). Clarify which foot to image prior to X-ray. Review imaging and reassess.",
+  "follow_up": "Return to clinic after X-ray for review and further management based on imaging results.",
+  "missing_information": [
+    "Which foot (right or left)",
+    "Detailed mechanism of injury (fall, heavy object, twisting, etc.)",
+    "Exact time of injury and course/progression of pain",
+    "Pain severity (eg. pain scale)",
+    "Associated symptoms (swelling, bruising, deformity, inability to bear weight, numbness/tingling)",
+    "Physical exam findings (inspection, palpation, neurovascular status, range of motion)",
+    "Past medical history and current medications",
+    "Allergies",
+    "X-ray results"
+  ]
+}

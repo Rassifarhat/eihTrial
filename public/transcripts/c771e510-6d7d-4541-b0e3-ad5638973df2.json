@@ -1,0 +1,36 @@
+{
+  "sessionId": "c771e510-6d7d-4541-b0e3-ad5638973df2",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "cee3584c-2ed8-4ec3-b34f-09e78f161b20",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766161228825,
+      "outputEnglish": "Hello, can you tell me how your back is now? I saw you a little while ago and you had back pain; did the medications I gave you help?"
+    },
+    {
+      "id": "e7db2906-3b72-4164-9142-e935967cb577",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766161251288,
+      "outputEnglish": "It helped me a little, yes, but I still have some pain, I’m not comfortable."
+    },
+    {
+      "id": "ed117d49-311b-4082-8566-e7db8bd588bd",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766161275655,
+      "outputEnglish": "Okay, maybe I should give a little medication now, or maybe we can do an X-ray to find out more about the problem."
+    },
+    {
+      "id": "efe66d4e-627d-4247-b50d-992e4d123d2d",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766161298050,
+      "outputEnglish": "I would prefer to have an X-ray."
+    }
+  ],
+  "savedAt": "2025-12-19T16:22:05.614Z"
+}

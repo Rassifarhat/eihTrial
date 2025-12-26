@@ -1,0 +1,21 @@
+{
+  "chief_complaint": "Back pain for about one week not improved with medication.",
+  "history_of_present_illness": "Patient reports approximately 1 week of back pain that has not responded to their current medication. Patient requests additional testing because they suspect a disc or other structural cause. No additional details provided about pain characteristics, neurological symptoms, prior episodes, or exact treatments tried.",
+  "assessment": "Back pain of one week duration refractory to current medication. Differential includes mechanical back pain versus possible disc/structural pathology (patient concerned). Insufficient information to confirm diagnosis or assess for neurological compromise.",
+  "plan": "1) Obtain focused history and perform physical and neurological exam. 2) Review current medications and doses; consider analgesic dose adjustment as appropriate. 3) If clinical suspicion for disc disease or red flags present, obtain imaging (consider lumbar spine MRI if available; X-ray if indicated). 4) Consider referral to spine specialist or physiotherapy based on findings. 5) Provide return precautions (worsening pain, new numbness/weakness, bowel or bladder dysfunction) and arrange follow-up after testing or sooner if symptoms worsen.",
+  "follow_up": "Follow up after diagnostic testing and/or sooner if symptoms worsen or new neurological symptoms develop. Exact timing not provided.",
+  "missing_information": [
+    "Exact pain location (specific spine level)",
+    "Radiation of pain (to legs/sciatica)",
+    "Pain severity (pain score)",
+    "Pain quality and timing (constant/intermittent, worse with movement)",
+    "Aggravating and relieving factors",
+    "Current medication names, doses, duration",
+    "Past medical and surgical history including prior back problems",
+    "Neurological symptoms (numbness, weakness, bowel/bladder changes)",
+    "Physical exam findings (range of motion, neurologic exam)",
+    "Vital signs",
+    "Allergies",
+    "Functional impact (ability to perform daily activities)"
+  ]
+}

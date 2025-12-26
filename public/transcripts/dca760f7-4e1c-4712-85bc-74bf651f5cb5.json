@@ -1,0 +1,36 @@
+{
+  "sessionId": "dca760f7-4e1c-4712-85bc-74bf651f5cb5",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "51608737-3bbb-4d6c-8569-ff550c593a44",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766164669440,
+      "outputEnglish": "Hello, how can I help you today?"
+    },
+    {
+      "id": "dc2cafc5-a3a7-4b49-9aad-d8a57cbafde8",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766164680458,
+      "outputEnglish": "I have severe pain in my back, and..."
+    },
+    {
+      "id": "024b6ccd-3913-483c-89e6-9b735c01d8ad",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766164682021,
+      "outputEnglish": "Unclear"
+    },
+    {
+      "id": "20a6ec4c-2a9e-4581-9dbd-9ccaf6e4499c",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766164923764,
+      "outputEnglish": "Okay, please tell me exactly what you're saying so I can translate it accurately."
+    }
+  ],
+  "savedAt": "2025-12-19T17:22:10.636Z"
+}

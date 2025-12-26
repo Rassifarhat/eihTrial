@@ -1,0 +1,29 @@
+{
+  "sessionId": "af5517f3-1543-45dc-80f5-e5cb5190913e",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "c7b19e48-b96f-4732-ad6d-ae3bc112ed05",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766162894150,
+      "outputEnglish": "So tell me more about your pain. I saw you last week, and there was pain on the right side, correct? Have the medications I gave you improved it?"
+    },
+    {
+      "id": "e3bef4f8-16f1-4349-a1cc-6de6ed3de081",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766162922709,
+      "outputEnglish": "It's a bit better, but I still have some pain. I don't understand, sometimes there's no pain, and sometimes the pain comes suddenly, and I hear a cracking sound from the knee."
+    },
+    {
+      "id": "20746fcd-3fb6-4faa-a4ec-e683fa1d32e7",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766162948202,
+      "outputEnglish": "Maybe we should increase the dose of the painkiller, what do you think?"
+    }
+  ],
+  "savedAt": "2025-12-19T16:49:58.900Z"
+}

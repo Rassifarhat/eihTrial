@@ -1,0 +1,24 @@
+{
+  "chief_complaint": "Severe back pain",
+  "history_of_present_illness": "Patient states: 'I have severe pain in my back,' but provides no additional details. No information on onset, duration, quality, exact location, radiation, severity scale, triggers, prior episodes, treatments tried, or associated symptoms.",
+  "assessment": "Reported severe back pain; etiology and severity undetermined due to incomplete information.",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Onset (when did pain start?)",
+    "Duration and course (constant, intermittent, progressive?)",
+    "Pain severity (numeric pain scale)",
+    "Exact location of pain (lumbar, thoracic, bilateral/unilateral)",
+    "Radiation (to legs, buttocks, chest?)",
+    "Character of pain (sharp, dull, burning, aching)",
+    "Aggravating and relieving factors",
+    "Recent trauma or heavy lifting",
+    "Associated symptoms (fever, weight loss, numbness, weakness, bowel/bladder dysfunction)",
+    "Prior episodes and prior treatments/trials (medications, physical therapy)",
+    "Current medications and allergies",
+    "Relevant past medical history (e.g., cancer, osteoporosis, clotting disorder, infection)",
+    "Physical exam findings (neurologic, musculoskeletal, range of motion)",
+    "Vital signs",
+    "Imaging or laboratory results if available"
+  ]
+}

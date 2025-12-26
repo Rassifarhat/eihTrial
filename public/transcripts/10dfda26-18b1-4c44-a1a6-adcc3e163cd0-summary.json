@@ -1,0 +1,27 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "unknown",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "patient's response to the question",
+    "chief complaint (confirmation that back pain is present)",
+    "onset and duration of symptoms",
+    "severity/intensity of pain",
+    "pain characteristics (sharp, dull, ache, burning)",
+    "pain location and radiation",
+    "associated symptoms (numbness, weakness, bowel/bladder changes, fever)",
+    "aggravating and relieving factors",
+    "prior episodes and baseline functional status",
+    "current treatments or medications for the complaint",
+    "past medical history and surgical history",
+    "medication list and allergies",
+    "physical examination findings (spine, neurologic exam)",
+    "vital signs",
+    "imaging or laboratory results, if any",
+    "working diagnosis or differential",
+    "treatment plan (medications, therapy, referrals, imaging)",
+    "follow-up timing and instructions"
+  ]
+}

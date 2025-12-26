@@ -1,0 +1,2691 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.claude/
+  settings.local.json
+app/
+  api/
+    process-voice/
+      route.ts
+  favicon.ico
+  globals.css
+  layout.tsx
+  page.tsx
+components/
+  ExaminationRequestModal.tsx
+public/
+  filled/
+    daman-physiotherapy-8489d6f5-2999-49b3-a1d0-0d375cf5b44a.pdf
+    nas-ct-scan-b0550341-feae-482f-9a64-5f05136fd1c9.pdf
+    nas-Medical-Report-656f0698-8545-44b1-acba-d79905cfb1c6.pdf
+    thiqa-form-02b94645-bb24-46c6-96c2-3a9f7f18ae05.pdf
+    thiqa-form-0d2720e7-3b3b-46fb-9585-1280f8529f49.pdf
+    thiqa-form-13f55c85-56f3-442e-a3b0-6dbde65c5cda.pdf
+    thiqa-form-188880ca-04ec-4ebc-bbd4-bbf6174733a7.pdf
+    thiqa-form-1fcff37f-a610-4edf-aeff-68953576b058.pdf
+    thiqa-form-24c38eb1-ec01-40c7-9de1-dd8f9f763c38.pdf
+    thiqa-form-5b0fa247-0c7e-44f9-9a37-21ef48cb8c7c.pdf
+    thiqa-form-60f6abf1-e203-4a58-aa03-5cf91808f8f6.pdf
+    thiqa-form-66e787ba-c5eb-4d32-9f3f-3eb90d5e05b4.pdf
+    thiqa-form-90c604af-c244-48ed-b210-64ace6d47c85.pdf
+    thiqa-form-981b345e-dc83-4f4d-9c2d-52ccf93c0671.pdf
+    thiqa-form-9dde9462-08bc-4fd0-8ec4-5251c41ed340.pdf
+    thiqa-form-9f3e3cee-82ee-4aee-944d-d1734b05df82.pdf
+    thiqa-form-b6088fea-9a5a-4e40-bd2a-9c1a974bf51d.pdf
+    thiqa-form-c530f98f-d1b2-444f-bfaa-ab9db19c4ba9.pdf
+    thiqa-form-d95d8942-e438-4859-ad94-0a849cf75182.pdf
+  adnic-fillable.pdf
+  buhayra-fillable.pdf
+  daman-fillable.pdf
+  inaya-fillable.pdf
+  nas-fillable.pdf
+  sukoun-fillable.pdf
+  thiqa-fillable.pdf
+.dockerignore
+.gitignore
+.mcp.json
+AUDIT_AND_EMAIL_CHANGES.md
+CLAUDE.md
+Dockerfile
+eslint.config.mjs
+extract-fields.js
+IMPLEMENTATION_SUMMARY.md
+next.config.ts
+package.json
+PDF_FIELD_ANALYSIS.md
+postcss.config.mjs
+README.md
+TESTING_CHECKLIST.md
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".claude/settings.local.json">
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e:*)",
+      "WebSearch",
+      "Bash(npm run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
+</file>
+
+<file path=".dockerignore">
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+README.md
+.next
+.git
+.env
+.env.local
+.env.production
+.env*.local
+</file>
+
+<file path=".mcp.json">
+{
+  "mcpServers": {
+    "soniox-docs": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://soniox.com/docs/api/mcp/mcp"
+      ],
+      "env": {}
+    },
+    "cartesia-mcp": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "-m",
+        "cartesia_mcp"
+      ],
+      "env": {
+        "CARTESIA_API_KEY": "sk_car_bLxMNkqUPAsUTM8KGbHmXM"
+      }
+    }
+  }
+}
+</file>
+
+<file path="Dockerfile">
+# 1. Base image - Node 22 Alpine (matches local dev environment)
+FROM node:22-alpine AS base
+
+# 2. Dependencies
+FROM base AS deps
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+# 3. Builder
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+# This creates the .next/standalone folder
+RUN npm run build
+
+# 4. Runner (Production Image)
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+# Environment variables - mount .env file at runtime:
+# docker run -p 3000:3000 --env-file .env fill-pdf
+#
+# Required env vars:
+# - OPENAI_API_KEY
+# - GMAIL_USER
+# - GMAIL_PASS
+# - SONIOX_API_KEY
+# - CARTESIA_API_KEY
+
+# Create a non-root user for security
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+
+# Automatically leverage output traces to reduce image size
+# Copy only the standalone output and static assets
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="AUDIT_AND_EMAIL_CHANGES.md">
+# Audit Report & Email Functionality - December 8, 2025
+
+## 📋 Summary of Changes Made by User
+
+### ✅ Good Changes
+
+1. **Fixed Whisper API** - Changed from `"gpt-4o-mini"` to `"whisper-1"` ✅
+2. **Added 4 New Insurers:**
+   - Adnic (teal)
+   - Buhayra (cyan)
+   - Inaya (violet)
+   - Sukoun (rose)
+3. **Added "Medical Report" Test Type** with special logic
+4. **Added "diagnosis" Field** to ClinicalFormData
+5. **Upgraded GPT Model** from `"gpt-4-turbo"` to `"gpt-4o"`
+6. **Improved Error Handling** for optional PDF fields
+
+---
+
+## 🔧 Email Functionality Restoration
+
+### What Was Missing
+- ❌ nodemailer import was removed
+- ❌ `sendEmailWithPdf()` function was deleted
+- ❌ Email logic in POST handler was removed
+
+### What Was Added Back
+
+#### 1. Backend Changes ([app/api/process-voice/route.ts](app/api/process-voice/route.ts))
+
+**Import Added:**
+```typescript
+import nodemailer from "nodemailer";
+```
+
+**Email Function Added (Line 216-265):**
+```typescript
+async function sendEmailWithPdf(
+  pdfBytes: Uint8Array,
+  filename: string,
+  insurer: string,
+  testType: string
+): Promise<void> {
+  const recipientEmail = "farhat.rassi@eih.ae"; // HARDCODED
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: recipientEmail,
+    subject: `${insurer} ${testType} Authorization Request - PDF Generated`,
+    html: `... professional email template ...`,
+    attachments: [{ filename, content: Buffer.from(pdfBytes), contentType: "application/pdf" }],
+  };
+
+  await transporter.sendMail(mailOptions);
+  console.log(`Email sent successfully to ${recipientEmail}`);
+}
+```
+
+**POST Handler Updated (Line 273, 296-304):**
+```typescript
+// Extract sendEmail parameter
+const sendEmail = formData.get("sendEmail") as string | null;
+
+// Step 4: Send email if user approved
+if (sendEmail === "yes") {
+  const filename = `${insurer.toLowerCase()}-${testType.replace(/\s+/g, '-')}-form.pdf`;
+  sendEmailWithPdf(pdfBytes, filename, insurer, testType).catch((err) => {
+    console.error("Email sending failed:", err);
+    // Don't fail the request if email fails
+  });
+  console.log("Email will be sent to farhat.rassi@eih.ae");
+}
+```
+
+---
+
+#### 2. Frontend Changes ([components/ExaminationRequestModal.tsx](components/ExaminationRequestModal.tsx))
+
+**State Added (Line 20):**
+```typescript
+const [sendEmail, setSendEmail] = useState<boolean>(false);
+```
+
+**handleSubmit Updated (Line 111-114):**
+```typescript
+// Add sendEmail parameter if checkbox is checked
+if (sendEmail) {
+    formData.append("sendEmail", "yes");
+}
+```
+
+**UI Checkbox Added (Line 232-244):**
+```tsx
+{/* Email Checkbox */}
+<div className="w-full flex items-center justify-center gap-3 py-2 px-4 bg-blue-50 rounded-lg border border-blue-200">
+    <input
+        type="checkbox"
+        id="sendEmailCheckbox"
+        checked={sendEmail}
+        onChange={(e) => setSendEmail(e.target.checked)}
+        className="w-5 h-5 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer"
+    />
+    <label htmlFor="sendEmailCheckbox" className="text-sm font-medium text-gray-700 cursor-pointer">
+        Send PDF to <span className="text-blue-600">farhat.rassi@eih.ae</span>?
+    </label>
+</div>
+```
+
+---
+
+## 🎯 How Email Works Now
+
+### User Flow:
+1. User selects insurer (Thiqa, Daman, Nas, Adnic, Buhayra, Inaya, Sukoun)
+2. User selects test type (MRI, CT Scan, Physiotherapy, Admission, Medical Report)
+3. User records audio
+4. **NEW:** User sees checkbox: "Send PDF to farhat.rassi@eih.ae?"
+5. User checks/unchecks checkbox (optional)
+6. User clicks "Generate Request"
+7. PDF is generated and downloaded
+8. **IF checkbox was checked:** Email is sent to `farhat.rassi@eih.ae` with PDF attached
+
+### Email Details:
+- **Recipient:** `farhat.rassi@eih.ae` (hardcoded, cannot be changed by user)
+- **Subject:** `{Insurer} {TestType} Authorization Request - PDF Generated`
+- **Attachment:** Generated PDF file
+- **From:** Uses Gmail account from `.env` (`GMAIL_USER`)
+- **Template:** Professional HTML email with insurer, test type, and filename details
+
+---
+
+## 🔐 Environment Variables Required
+
+**File:** [.env](.env)
+
+```env
+# OpenAI API (Required)
+OPENAI_API_KEY=your-key-here
+
+# Email Delivery (Required for email feature)
+GMAIL_USER=rassi.farhat@gmail.com
+GMAIL_PASS=your-gmail-app-password
+```
+
+**✅ Already Configured** - Both email variables are set
+
+---
+
+## 📊 Current System Capabilities
+
+### Supported Insurers (7 total):
+1. ✅ Thiqa (emerald)
+2. ✅ Daman (blue)
+3. ✅ Nas (indigo)
+4. ✅ Adnic (teal)
+5. ✅ Buhayra (cyan)
+6. ✅ Inaya (violet)
+7. ✅ Sukoun (rose)
+
+### Supported Test Types (5 total):
+1. ✅ MRI 🧲
+2. ✅ CT Scan ☢️
+3. ✅ Physiotherapy 🤸 (special logic: test_code = "12 sessions")
+4. ✅ Admission 🏥
+5. ✅ Medical Report 📝 (special logic: test = "conservative treatment", test_code = "")
+
+### PDF Fields (9 text fields):
+1. `complaint`
+2. `etiology_duration`
+3. `conservative_result`
+4. `physical_exam`
+5. `goal`
+6. `icd10`
+7. `diagnosis` *(NEW)*
+8. `test`
+9. `test_code`
+
+### Checkbox Fields (4 checkboxes):
+- `mri_check` - For MRI tests
+- `ct_check` - For CT Scan tests
+- `physiotherapy_check` - For Physiotherapy
+- `admission_check` - For Admission
+- **Note:** Medical Report does NOT tick any checkbox
+
+---
+
+## ⚠️ Known Limitations
+
+### PDF Field Availability:
+- **Thiqa & Daman:** Have all checkboxes ✅
+- **Nas:** Missing all checkboxes (uses text-only) ⚠️
+- **Adnic, Buhayra, Inaya, Sukoun:** Checkbox availability UNKNOWN (need to verify with extract-fields.js)
+
+### Recommendations:
+1. Run field extraction on new PDFs:
+   ```bash
+   node extract-fields.js
+   ```
+   Update the script to include new insurers:
+   ```javascript
+   await listFields('adnic-fillable.pdf');
+   await listFields('buhayra-fillable.pdf');
+   await listFields('inaya-fillable.pdf');
+   await listFields('sukoun-fillable.pdf');
+   ```
+
+2. Check if `diagnosis` field exists in all PDFs
+3. Verify checkbox fields exist in new insurers
+
+---
+
+## 🧪 Testing Checklist
+
+### Email Functionality:
+- [ ] Checkbox appears in Step 3
+- [ ] Checkbox is clickable and toggleable
+- [ ] Unchecked: No email sent
+- [ ] Checked: Email sent to `farhat.rassi@eih.ae`
+- [ ] Email contains PDF attachment
+- [ ] Email has professional formatting
+- [ ] Email subject includes insurer and test type
+
+### New Insurers:
+- [ ] Adnic PDF generates correctly
+- [ ] Buhayra PDF generates correctly
+- [ ] Inaya PDF generates correctly
+- [ ] Sukoun PDF generates correctly
+- [ ] All 7 insurers display in Step 1 grid
+
+### Medical Report:
+- [ ] Medical Report option appears in Step 2
+- [ ] test field = "conservative treatment"
+- [ ] test_code field = "" (empty)
+- [ ] No checkboxes ticked
+- [ ] diagnosis field populated
+
+### Physiotherapy:
+- [ ] test_code = "12 sessions" (not CPT code)
+- [ ] physiotherapy_check is ticked
+
+---
+
+## 📝 Summary
+
+### ✅ What's Working:
+- Email functionality fully restored with user approval
+- 7 insurers supported (up from 3)
+- 5 test types supported (up from 4)
+- Professional email template with hardcoded recipient
+- Checkbox UI is clean and intuitive
+- Email sending doesn't block PDF download
+
+### ⏳ What Needs Verification:
+- PDF field compatibility for 4 new insurers
+- Checkbox availability in Adnic, Buhayra, Inaya, Sukoun PDFs
+- `diagnosis` field exists in all PDFs
+
+### 🎯 User Experience:
+1. Simple checkbox with clear recipient email shown
+2. Optional - user can choose to send or not send
+3. Email failure doesn't block PDF generation
+4. Email sent in background (non-blocking)
+
+---
+
+**Implementation Status:** ✅ Complete and Ready for Testing
+
+**Test the feature at:** http://localhost:3000
+</file>
+
+<file path="CLAUDE.md">
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+This is a Next.js application that fills medical PDF forms (specifically Thiqa Authorization Request forms for UAE health insurance) using voice input. Users record their clinical case description, which is transcribed and processed to automatically populate a fillable PDF.
+
+## Development Commands
+
+```bash
+# Start development server (runs on http://localhost:3000)
+npm run dev
+
+# Build for production
+npm build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
+```
+
+## Architecture
+
+### Tech Stack
+- Next.js 16 (App Router) with TypeScript
+- React 19
+- Tailwind CSS 4
+- OpenAI API (Whisper for transcription, GPT-4.1-mini for data extraction)
+- pdf-lib for PDF manipulation
+
+### Application Flow
+
+1. **Voice Recording** ([app/page.tsx](app/page.tsx))
+   - Client-side recording using MediaRecorder API
+   - Supports multiple audio formats (webm, ogg, mp4, wav)
+   - Hold-to-record interface with visual feedback
+
+2. **API Processing** ([app/api/process-voice/route.ts](app/api/process-voice/route.ts))
+   - Receives audio file via multipart/form-data
+   - Transcribes audio using OpenAI Whisper (`gpt-4o-mini-transcribe`)
+   - Extracts structured clinical data using GPT-4.1-mini with JSON mode
+   - Fills PDF template using pdf-lib
+   - Saves filled PDFs to `public/filled/` directory
+   - Returns PDF as downloadable blob
+
+3. **PDF Template**
+   - Template: `public/thiqaForm_fillable.pdf`
+   - Filled forms saved to: `public/filled/thiqa-form-{uuid}.pdf`
+
+### Key Components
+
+**ClinicalFormData Interface** ([app/api/process-voice/route.ts:12-22](app/api/process-voice/route.ts#L12-L22)):
+- Defines the structured data extracted from clinical descriptions
+- Fields: complaint, etiology_duration, conservative_result, physical_exam, goal, icd10, test, test_check, test_code
+
+**PDF Field Mappings** ([app/api/process-voice/route.ts:100-109](app/api/process-voice/route.ts#L100-L109)):
+- Maps ClinicalFormData keys to PDF form field names
+- Fields must match the fillable field names in the PDF template exactly
+
+### Environment Variables
+
+Required in `.env`:
+```
+OPENAI_API_KEY=sk-proj-...
+```
+
+## Important Implementation Details
+
+### Audio Format Handling
+The app automatically detects supported audio formats using `MediaRecorder.isTypeSupported()` and prefers webm with opus codec. The API route handles multiple formats dynamically.
+
+### PDF Form Field Names
+When modifying PDF processing, use the debug logging to see available field names:
+```typescript
+const fields = form.getFields();
+console.log("Available PDF fields:", fields.map(f => f.getName()));
+```
+
+### AI Prompt Engineering
+The system prompt in [app/api/process-voice/route.ts:47-70](app/api/process-voice/route.ts#L47-L70) contains critical instructions for generating medically appropriate content. Key requirements:
+- Conservative treatments must end with "failure to address pain"
+- Physical exam needs 4-5 findings
+- Goal must reference failed conservative treatment
+- Always use JSON response format with temperature 0.3
+
+### File Storage
+Generated PDFs are saved to the filesystem in `public/filled/` to persist across requests. The file path is returned in the `X-File-Path` header but the PDF bytes are sent directly in the response.
+
+## Path Aliases
+
+TypeScript is configured with `@/*` aliasing to the root directory ([tsconfig.json:21-23](tsconfig.json#L21-L23)).
+Critical Tool Usage Rules
+Context7 - Always Use for Documentation Lookups
+MANDATORY: When the user asks about any library, API, framework, or tool:
+
+ALWAYS use the Context7 MCP tool FIRST to look up fresh, up-to-date documentation
+DO NOT rely solely on your training data for library/API information
+Context7 provides the most current documentation and should be your primary source
+
+When to use Context7:
+
+User asks "how do I use [library]?"
+User asks about specific API methods or functions
+User asks about configuration or setup for any tool
+User mentions a specific library version
+User asks about best practices for a framework
+ANY question about external libraries, frameworks, or APIs
+
+Example triggers:
+
+"How do I use Next.js 15?"
+"What's the API for React Query?"
+"How do I configure Tailwind?"
+"Show me how to use Prisma"
+"What are the methods in axios?"
+
+🚨 CRITICAL: Context7 Quality Requirements
+ALWAYS Check Resource Dates - NO EXCEPTIONS
+When using Context7, you MUST be thorough and quality-focused:
+MANDATORY DATE CHECKING:
+
+ALWAYS check the date/timestamp of EVERY resource Context7 returns
+PRIORITIZE resources in this exact order:
+
+First: Resources from the last 7 days (most recent)
+Second: Resources from the last 30 days (recent)
+Third: Resources from the last 6 months (relatively current)
+Last Resort: Older resources (ONLY if nothing newer exists)
+
+
+NEVER return outdated information when newer resources are available
+ALWAYS mention the date of the resource you're using in your response
+
+REJECT OUTDATED/LOW-QUALITY RESOURCES:
+
+❌ IGNORE resources older than 1 year if newer alternatives exist
+❌ NEGLECT "lame" information (vague, incomplete, or deprecated content)
+❌ SKIP resources that don't clearly indicate their publication/update date
+❌ DISCARD resources that contradict newer official documentation
+❌ AVOID third-party tutorials when official docs are available and recent
+
+Take Your Time - Thoroughness Over Speed
+DO NOT RUSH Context7 Lookups:
+
+Multiple Searches if Needed: If the first Context7 search returns outdated or unclear results, make additional searches with:
+
+More specific queries
+Version numbers (e.g., "React 18" not just "React")
+Date constraints (e.g., "Next.js 15 2024")
+
+
+Cross-Reference: When you find documentation, verify it's the most current by:
+
+Checking if a newer version exists
+Looking for "latest", "current", or version numbers
+Confirming the date is recent
+
+
+Be Patient: Taking an extra 10-20 seconds to find the RIGHT documentation is better than quickly returning WRONG or OUTDATED information
+
+Quality Checklist - MUST FOLLOW
+Before responding to the user with Context7 results:
+✅ Did I check the date of the resource?
+✅ Is this the most recent information available?
+✅ Did I search for more recent alternatives?
+✅ Is this from official/authoritative sources?
+✅ Does this match the version the user is asking about?
+✅ Would I trust this information for production code?
+If you answer NO to any of these, DO MORE CONTEXT7 SEARCHES until you can answer YES to all.
+Example of Correct Context7 Usage
+❌ BAD - Shallow Usage:
+User: "How do I use React Query v5?"
+Claude: [one Context7 search, returns first result from 2022]
+Claude: "Here's how to use React Query..." [gives outdated v3 info]
+✅ GOOD - Thorough Usage:
+User: "How do I use React Query v5?"
+Claude: [Context7 search: "React Query v5"]
+Claude: [Checks dates - finds results from 2023]
+Claude: [Context7 search: "React Query v5 2024"]
+Claude: [Finds official docs updated 2 weeks ago]
+Claude: "Based on the official React Query documentation (updated Dec 2024), 
+         here's how to use v5..." [gives current, accurate information]
+When Context7 Returns Multiple Results
+ALWAYS:
+
+Review ALL results - don't just use the first one
+Compare dates - prioritize the newest
+Check sources - official docs > blog posts > forums
+Verify consistency - if results conflict, search again with more specific terms
+Mention the date - tell the user when the info is from
+
+Red Flags - When to Search Again
+If you see any of these, make another Context7 search:
+
+🚩 Date is older than 6 months for fast-moving libraries
+🚩 Information seems incomplete or vague
+🚩 Resource doesn't specify version numbers
+🚩 Source is unofficial (Stack Overflow, random blog) when official docs should exist
+🚩 Information contradicts what you'd expect from recent versions
+🚩 No date/timestamp is visible on the resource
+
+Summary: Context7 Usage Standards
+PRIORITY ORDER:
+
+⚡ RECENCY: Newest information first (check dates!)
+🏛️ AUTHORITY: Official docs over third-party content
+🎯 SPECIFICITY: Exact version/feature info over general info
+✅ QUALITY: Complete, clear information over vague content
+
+NEVER:
+
+❌ Return the first result without checking its date
+❌ Use outdated information when newer exists
+❌ Skip date checking to save time
+❌ Trust unofficial sources over official docs
+❌ Give up after one search - be persistent!
+
+next-devtools-mcp - Always Use for Testing
+MANDATORY: When testing Next.js applications:
+
+ALWAYS use the next-devtools-mcp tool for testing
+DO NOT create your own test implementations
+DO NOT use other testing approaches unless explicitly requested
+The next-devtools-mcp provides the correct testing environment and tools
+
+When to use next-devtools-mcp:
+
+User asks to test their Next.js app
+User asks to run tests
+User asks to check if something works
+User wants to verify functionality
+User asks about test results
+
+Workflow Example
+User asks: "How do I fetch data in Next.js 15?"
+Correct response (with quality checks):
+
+Call Context7 MCP: "Next.js 15 data fetching"
+CHECK DATES of returned resources
+If results are old (> 6 months):
+
+Call Context7 again: "Next.js 15 data fetching 2024"
+Call Context7 again: "Next.js 15 server components data fetching"
+
+
+Find official Next.js docs from last 30 days
+Verify information matches Next.js 15 (not 13 or 14)
+Provide answer based on the MOST RECENT documentation from Context7
+MENTION THE DATE: "Based on Next.js 15 documentation (updated November 2024)..."
+If implementation is needed and testing is requested, use next-devtools-mcp
+
+Incorrect response:
+❌ Providing information from training data without checking Context7
+❌ Using Context7 once, getting old results, and not searching again
+❌ Not checking the date of the documentation
+❌ Returning information about Next.js 13 when asked about Next.js 15
+❌ Using unofficial blog posts when official docs are available
+❌ Creating manual test files instead of using next-devtools-mcp
+❌ Being satisfied with "lame" or vague documentation
+Configuration
+Both MCPs are configured in your Claude Code MCP configuration file:
+
+Context7: Requires API key (set in environment variable)
+next-devtools-mcp: Ready to use for Next.js testing
+
+Remember
+Context7 Usage
+
+Context7 = Fresh Documentation (ALWAYS FIRST)
+CHECK DATES - Recent info only (7 days > 30 days > 6 months)
+BE THOROUGH - Multiple searches if needed
+REJECT OUTDATED - Never return old info when new exists
+MENTION DATES - Always tell user when info is from
+QUALITY OVER SPEED - Take time to find the RIGHT documentation
+
+next-devtools-mcp Usage
+
+next-devtools-mcp = Testing Next.js (ALWAYS FOR TESTS)
+DO NOT create your own test implementations
+
+Fallback
+
+Your training data = Only as fallback if MCPs fail completely
+
+
+🎯 Quick Decision Tree
+User asks about a library/API/framework:
+
+➡️ Use Context7 to search
+➡️ Check the date of results
+➡️ Is it recent (< 30 days)?
+
+✅ YES → Verify it's authoritative → Use it
+❌ NO → Search again with date/version constraints
+
+
+➡️ Still getting old results?
+
+Search with "2025" or "latest version"
+Search official docs specifically
+Try 2-3 different search terms
+
+
+➡️ Respond with the MOST RECENT, HIGHEST QUALITY info found
+
+Remember: It's better to spend 30 seconds finding the right documentation than to give the user outdated information that wastes their time!
+</file>
+
+<file path="eslint.config.mjs">
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+</file>
+
+<file path="extract-fields.js">
+const { PDFDocument } = require('pdf-lib');
+const fs = require('fs');
+const path = require('path');
+
+async function listFields(pdfFileName) {
+    try {
+        const pdfPath = path.join(__dirname, 'public', pdfFileName);
+        const pdfBytes = fs.readFileSync(pdfPath);
+        const pdfDoc = await PDFDocument.load(pdfBytes);
+        const form = pdfDoc.getForm();
+        const fields = form.getFields();
+
+        console.log(`\n=== ${pdfFileName.toUpperCase()} ===`);
+        console.log('--- FORM FIELDS START ---');
+        fields.forEach(field => {
+            const type = field.constructor.name;
+            const name = field.getName();
+            console.log(`${name} (${type})`);
+        });
+        console.log('--- FORM FIELDS END ---');
+        console.log(`Total fields: ${fields.length}\n`);
+    } catch (err) {
+        console.error(`Error extracting fields from ${pdfFileName}:`, err.message);
+    }
+}
+
+// Extract fields from all 3 PDFs
+(async () => {
+    await listFields('thiqa-fillable.pdf');
+    await listFields('daman-fillable.pdf');
+    await listFields('nas-fillable.pdf');
+})();
+</file>
+
+<file path="IMPLEMENTATION_SUMMARY.md">
+# Implementation Summary - Multi-Insurer Examination Requests
+
+**Date:** 2025-12-08
+**Status:** ✅ Complete - Ready for Testing
+
+---
+
+## 🎉 What Was Implemented
+
+### 1. ✅ Multi-Insurer Support
+- **Thiqa** (Emerald theme)
+- **Daman** (Blue theme)
+- **Nas** (Indigo theme)
+
+Dynamic PDF selection based on user's insurer choice.
+
+### 2. ✅ Multi-Test Type Support with Checkboxes
+- **MRI** → `mri_check`
+- **CT Scan** → `ct_check`
+- **Physiotherapy** → `physiotherapy_check`
+- **Admission** → `admission_check`
+
+Only ONE checkbox is ticked per form based on selected test type.
+
+### 3. ✅ Modern Dashboard UI
+- Card-based landing page with gradient backgrounds
+- **Active Card:** "Examination Requests" - opens modal
+- **3 Placeholder Cards:** Coming Soon features
+- Professional medical theme with smooth animations
+
+### 4. ✅ Enhanced Modal with Validation
+- **Step 1:** Select Insurer (Thiqa/Daman/Nas)
+- **Step 2:** Select Test Type (MRI/CT/Physio/Admission)
+- **Step 3:** Record audio + optional email input
+- **Step 4:** Success screen with download
+
+**Validation:** Cannot proceed without selecting insurer, test type, AND recording audio.
+
+### 5. ✅ Email Integration (Optional)
+- Uses **nodemailer** with Gmail SMTP
+- Optional email field in Step 3
+- PDF is both downloaded AND emailed (if email provided)
+- Professional email template with form details
+
+### 6. ✅ Backend API Updates
+- Accepts `insurer`, `testType`, and optional `email` parameters
+- Dynamic PDF template selection
+- Checkbox logic: Thiqa & Daman get checkboxes, Nas uses text-only
+- Improved error handling and validation
+
+---
+
+## 📂 Files Modified
+
+| File | Changes | Lines |
+|------|---------|-------|
+| [app/api/process-voice/route.ts](app/api/process-voice/route.ts) | Multi-insurer support, checkbox logic, email integration | +80 |
+| [components/ExaminationRequestModal.tsx](components/ExaminationRequestModal.tsx) | Validation logic, email field | +30 |
+| [app/page.tsx](app/page.tsx) | Already had modern dashboard (no changes needed) | 0 |
+| [.env](.env) | Added GMAIL_USER and GMAIL_PASS | +2 |
+| [extract-fields.js](extract-fields.js) | Updated to check all 3 PDFs | Updated |
+
+---
+
+## 🔍 PDF Field Analysis Results
+
+### ✅ Compatible Fields (All 3 PDFs)
+These text fields exist in **ALL** PDFs with identical names:
+- `complaint`
+- `etiology_duration`
+- `conservative_result`
+- `physical_exam`
+- `goal`
+- `icd10`
+- `test`
+- `test_code`
+
+### ✅ Checkbox Fields
+
+| Field | Thiqa | Daman | Nas |
+|-------|-------|-------|-----|
+| `mri_check` | ✅ | ✅ | ❌ |
+| `ct_check` | ✅ | ✅ | ❌ |
+| `physiotherapy_check` | ✅ | ✅ | ❌ |
+| `admission_check` | ✅ | ✅ | ❌ |
+
+**⚠️ Important:** Nas PDF does NOT have checkboxes. The backend handles this gracefully:
+- Thiqa & Daman: Checkboxes are ticked
+- Nas: Test type is written to the `test` text field (no checkboxes)
+
+See [PDF_FIELD_ANALYSIS.md](PDF_FIELD_ANALYSIS.md) for full details.
+
+---
+
+## 🚀 How to Test
+
+### Prerequisites
+1. **Start Dev Server:**
+   ```bash
+   npm run dev
+   ```
+   Server runs at: http://localhost:3000
+
+2. **Configure Email (Optional):**
+   Update [.env](.env) with your Gmail credentials:
+   ```env
+   GMAIL_USER=your-email@gmail.com
+   GMAIL_PASS=your-app-password
+   ```
+
+   **Note:** Use a Gmail App Password, not your regular password.
+   [How to generate App Password](https://support.google.com/accounts/answer/185833)
+
+### Testing Steps
+
+#### Test 1: Basic Flow (Thiqa + MRI)
+1. Open http://localhost:3000
+2. Click **"Examination Requests"** card
+3. **Step 1:** Select **Thiqa**
+4. **Step 2:** Select **MRI**
+5. **Step 3:**
+   - Hold microphone button and say: "Patient has lower back pain for 6 months, needs MRI lumbar spine"
+   - (Optional) Enter email address
+   - Click **"Generate Request"**
+6. **Step 4:** Download PDF
+7. **Verify PDF:**
+   - Opens correctly
+   - Only `mri_check` is ticked (not ct_check, physiotherapy_check, or admission_check)
+   - All text fields are filled
+   - Filename: `thiqa-mri-{uuid}.pdf`
+
+#### Test 2: Different Insurer (Daman + CT Scan)
+1. Create new request
+2. Select **Daman** → **CT Scan**
+3. Record: "Head trauma, needs CT scan of head"
+4. Generate and download
+5. **Verify PDF:**
+   - Uses Daman template
+   - Only `ct_check` is ticked
+   - Filename: `daman-ct-{uuid}.pdf`
+
+#### Test 3: Nas (Text-Only)
+1. Select **Nas** → **Physiotherapy**
+2. Record: "Shoulder pain, needs physiotherapy"
+3. Generate and download
+4. **Verify PDF:**
+   - Uses Nas template
+   - NO checkboxes visible (expected - Nas doesn't have them)
+   - Test type written to `test` field as text
+   - Filename: `nas-physiotherapy-{uuid}.pdf`
+
+#### Test 4: Email Delivery
+1. Configure email credentials in [.env](.env)
+2. Create request with email address provided
+3. Generate PDF
+4. **Verify:**
+   - PDF downloads immediately
+   - Email arrives within 1-2 minutes
+   - Email contains PDF attachment
+   - Email has professional formatting
+
+#### Test 5: Validation
+1. Try to click "Generate Request" without recording → ❌ Error shown
+2. Try to proceed from Step 1 without selecting insurer → ❌ Can't proceed
+3. Try to proceed from Step 2 without selecting test → ❌ Can't proceed
+
+---
+
+## 🧪 Test Matrix
+
+| Insurer | Test Type | Expected Checkbox | Status |
+|---------|-----------|-------------------|--------|
+| Thiqa | MRI | `mri_check` ✅ | ⏳ Manual test pending |
+| Thiqa | CT Scan | `ct_check` ✅ | ⏳ Manual test pending |
+| Thiqa | Physiotherapy | `physiotherapy_check` ✅ | ⏳ Manual test pending |
+| Thiqa | Admission | `admission_check` ✅ | ⏳ Manual test pending |
+| Daman | MRI | `mri_check` ✅ | ⏳ Manual test pending |
+| Daman | CT Scan | `ct_check` ✅ | ⏳ Manual test pending |
+| Daman | Physiotherapy | `physiotherapy_check` ✅ | ⏳ Manual test pending |
+| Daman | Admission | `admission_check` ✅ | ⏳ Manual test pending |
+| Nas | MRI | Text only (no checkbox) | ⏳ Manual test pending |
+| Nas | CT Scan | Text only (no checkbox) | ⏳ Manual test pending |
+| Nas | Physiotherapy | Text only (no checkbox) | ⏳ Manual test pending |
+| Nas | Admission | Text only (no checkbox) | ⏳ Manual test pending |
+
+---
+
+## 🐛 Known Issues & Limitations
+
+### 1. Nas PDF Missing Checkboxes
+- **Issue:** Nas PDF doesn't have checkbox fields
+- **Impact:** Test type selection won't show as checkboxes in Nas PDFs
+- **Workaround:** Test type is written to the `test` text field instead
+- **Solution:** Add checkboxes to Nas PDF using Adobe Acrobat (future enhancement)
+
+### 2. Email Requires Gmail App Password
+- **Issue:** Regular Gmail passwords won't work with nodemailer
+- **Impact:** Email delivery will fail if using regular password
+- **Solution:** Generate an App Password from Google Account settings
+
+### 3. No Authentication
+- **Status:** Not implemented (as requested)
+- **Impact:** Anyone with the URL can access the application
+- **Future:** Add authentication layer when ready
+
+### 4. No Database
+- **Status:** Not implemented (as requested)
+- **Impact:** Generated PDFs accumulate in `public/filled/` directory
+- **Future:** Add database storage and cleanup script
+
+---
+
+## 📊 Next.js DevTools MCP Results
+
+**Server Status:** ✅ Running on http://localhost:3000
+
+**Available Routes:**
+- `/` - Dashboard (App Router)
+- `/api/process-voice` - PDF Generation API (App Router)
+- `/favicon.ico` - Favicon
+
+**Compilation Status:** ✅ No errors detected
+
+**Runtime Errors:** No browser session tested yet (manual testing required)
+
+---
+
+## 🎨 UI Design Highlights
+
+### Landing Page
+- **Hero:** "Medical Request Dashboard" with gradient background
+- **Primary Card:** Examination Requests (blue/violet theme, hover effects)
+- **Secondary Cards:** Greyed out "Coming Soon" placeholders
+- **Mobile Responsive:** 1 column (mobile) → 2 columns (tablet) → 2x2 grid (desktop)
+
+### Modal
+- **Clean Multi-Step Flow:** Progress clearly indicated
+- **Insurer Cards:** Color-coded (Emerald/Blue/Indigo)
+- **Test Type Grid:** Icons + labels (🧲 MRI, ☢️ CT, 🤸 Physio, 🏥 Admission)
+- **Recording Button:** Gradient violet → red pulse when recording
+- **Email Field:** Clearly marked as optional
+- **Success Screen:** Green checkmark with download button
+
+---
+
+## 📝 Environment Variables
+
+Required in [.env](.env):
+```env
+# OpenAI API (Required)
+OPENAI_API_KEY=your-openai-key
+
+# Email Delivery (Optional)
+GMAIL_USER=your-email@gmail.com
+GMAIL_PASS=your-app-password
+```
+
+---
+
+## 🚦 Current Status
+
+### ✅ Complete
+- [x] PDF field extraction and analysis
+- [x] Backend multi-insurer support
+- [x] Checkbox logic (Thiqa/Daman/Nas handling)
+- [x] Email integration with nodemailer
+- [x] Modern dashboard UI
+- [x] Modal with validation
+- [x] Dev server running without errors
+- [x] Next.js DevTools MCP integration
+
+### ⏳ Pending Manual Testing
+- [ ] Test all 12 insurer/test combinations
+- [ ] Verify checkbox ticking in generated PDFs
+- [ ] Test email delivery
+- [ ] Test validation error messages
+- [ ] Cross-browser testing (Chrome, Safari, Firefox)
+- [ ] Mobile responsiveness testing
+
+### 🔮 Future Enhancements (Not in Scope)
+- [ ] Add authentication
+- [ ] Add database storage
+- [ ] Add PDF cleanup script
+- [ ] Add checkboxes to Nas PDF template
+- [ ] Add automated tests (unit, integration, E2E)
+- [ ] Add other dashboard features (Lab Reports, Appointments, Analytics)
+
+---
+
+## 📞 Support & Debugging
+
+### If Email Fails:
+1. Check [.env](.env) has correct Gmail credentials
+2. Verify App Password is used (not regular password)
+3. Check server logs for email errors: `npm run dev` output
+4. Test with a simple email first (send to yourself)
+
+### If PDF Generation Fails:
+1. Check OpenAI API key is valid
+2. Check audio recording permission granted
+3. Check browser console for errors (F12 → Console tab)
+4. Verify API route is accessible: http://localhost:3000/api/process-voice
+
+### If Checkboxes Don't Appear:
+1. Check which insurer was selected (Nas doesn't have checkboxes)
+2. Verify checkbox field names in PDF using: `node extract-fields.js`
+3. Check server logs for checkbox warnings
+
+### Dev Server Issues:
+```bash
+# Kill existing server
+lsof -ti:3000 | xargs kill -9
+
+# Restart
+npm run dev
+```
+
+---
+
+## 🎯 Summary
+
+All features have been successfully implemented and the dev server is running without errors. The application is now ready for manual testing!
+
+**Next Steps:**
+1. Configure email credentials in [.env](.env) (optional)
+2. Manually test all 12 insurer/test combinations
+3. Verify PDF outputs match expected behavior
+4. Test email delivery functionality
+
+**Dev Server:** http://localhost:3000 ✅ Running
+
+Enjoy testing! 🚀
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "standalone",
+};
+
+export default nextConfig;
+</file>
+
+<file path="PDF_FIELD_ANALYSIS.md">
+# PDF Field Analysis Report
+
+**Date:** 2025-12-08
+**PDFs Analyzed:** thiqa-fillable.pdf, daman-fillable.pdf, nas-fillable.pdf
+
+---
+
+## 🚨 CRITICAL FINDINGS
+
+### NAS PDF Missing Checkboxes
+The `nas-fillable.pdf` file is **MISSING ALL 4 CHECKBOX FIELDS**:
+- ❌ `mri_check`
+- ❌ `ct_check`
+- ❌ `physiotherapy_check`
+- ❌ `admission_check`
+
+**Impact:** Cannot use checkbox-based test type selection with NAS forms.
+
+**Options:**
+1. **Add checkboxes to NAS PDF** (requires PDF editing tool like Adobe Acrobat)
+2. **Use text field workaround** (write test type to a text field instead)
+3. **Disable NAS from test type selection** (only allow Thiqa/Daman for now)
+
+---
+
+## Field Comparison Table
+
+| Field Name | Thiqa | Daman | Nas | Type | Notes |
+|------------|-------|-------|-----|------|-------|
+| `complaint` | ✅ | ✅ | ✅ | Text | All match |
+| `etiology_duration` | ✅ | ✅ | ✅ | Text | All match |
+| `conservative_result` | ✅ | ✅ | ✅ | Text | All match |
+| `physical_exam` | ✅ | ✅ | ✅ | Text | All match |
+| `goal` | ✅ | ✅ | ✅ | Text | All match |
+| `icd10` | ✅ | ✅ | ✅ | Text | All match |
+| `test` | ✅ | ✅ | ✅ | Text | All match |
+| `test_code` | ✅ | ✅ | ✅ | Text | All match |
+| **Checkboxes** ||||| |
+| `mri_check` | ✅ | ✅ | ❌ | Checkbox | Missing in Nas |
+| `ct_check` | ✅ | ✅ | ❌ | Checkbox | Missing in Nas |
+| `physiotherapy_check` | ✅ | ✅ | ❌ | Checkbox | Missing in Nas |
+| `admission_check` | ✅ | ✅ | ❌ | Checkbox | Missing in Nas |
+
+---
+
+## Detailed Field Lists
+
+### Thiqa PDF (16 fields)
+**Text Fields (13):**
+- complaint
+- etiology_duration
+- conservative_result
+- physical_exam
+- goal
+- icd10
+- test
+- test_code
+- History *(extra field, not in others)*
+- Text Box 1 *(extra field)*
+- Text Box 2 *(extra field)*
+- Text Box 3 *(extra field)*
+
+**Checkboxes (4):**
+- mri_check ✅
+- ct_check ✅
+- physiotherapy_check ✅
+- admission_check ✅
+
+---
+
+### Daman PDF (16 fields)
+**Text Fields (12):**
+- complaint
+- etiology_duration
+- conservative_result
+- physical_exam
+- goal
+- icd10
+- test
+- test_code
+- title1 *(extra field, not in others)*
+- title 2 *(extra field, note space in name)*
+- Text Box 1 *(extra field)*
+- Text Box 2 *(extra field)*
+
+**Checkboxes (4):**
+- mri_check ✅
+- ct_check ✅
+- physiotherapy_check ✅
+- admission_check ✅
+
+---
+
+### Nas PDF (10 fields)
+**Text Fields (10):**
+- complaint
+- etiology_duration
+- conservative_result
+- physical_exam
+- goal
+- icd10
+- test
+- test_code
+- conservative *(extra field, not in others)*
+- goal_label *(extra field, not in others)*
+
+**Checkboxes (0):**
+- ❌ NO CHECKBOXES
+
+---
+
+## Recommended Strategy
+
+### Option 1: Two-Tier Approach (RECOMMENDED)
+**Tier 1 - Full Feature (Thiqa & Daman):**
+- Support all 4 test types with checkbox selection
+- Full validation
+- User sees all options
+
+**Tier 2 - Text-Only (Nas):**
+- Write test type to `test` field (already done by GPT)
+- No checkbox selection
+- Show note: "Nas forms use text-based test selection"
+
+**Implementation:**
+```typescript
+const hasCheckboxes = insurer !== 'Nas';
+
+if (hasCheckboxes) {
+  // Fill checkboxes for Thiqa/Daman
+  if (data.mri_check) form.getCheckBox('mri_check').check();
+  // ... etc
+} else {
+  // Nas: test type already written to 'test' field by GPT
+  console.log('Nas form uses text-based test selection');
+}
+```
+
+---
+
+### Option 2: Add Checkboxes to Nas PDF
+**Pros:**
+- Consistent behavior across all insurers
+- Cleaner code
+
+**Cons:**
+- Requires PDF editing software
+- May need access to original Nas form template
+- Could violate form integrity if official template
+
+---
+
+### Option 3: Disable Nas Test Type Selection
+**Pros:**
+- Simple implementation
+- No special cases
+
+**Cons:**
+- Removes Nas support (defeats purpose)
+- User confusion
+
+---
+
+## Common Fields (Safe to Use)
+
+These 8 text fields exist in **ALL 3 PDFs** with **IDENTICAL NAMES**:
+✅ `complaint`
+✅ `etiology_duration`
+✅ `conservative_result`
+✅ `physical_exam`
+✅ `goal`
+✅ `icd10`
+✅ `test`
+✅ `test_code`
+
+**Mapping Code (No Changes Needed):**
+```typescript
+const textFieldMappings = [
+  { pdfField: "complaint", dataKey: "complaint" },
+  { pdfField: "etiology_duration", dataKey: "etiology_duration" },
+  { pdfField: "conservative_result", dataKey: "conservative_result" },
+  { pdfField: "physical_exam", dataKey: "physical_exam" },
+  { pdfField: "goal", dataKey: "goal" },
+  { pdfField: "icd10", dataKey: "icd10" },
+  { pdfField: "test", dataKey: "test" },
+  { pdfField: "test_code", dataKey: "test_code" },
+];
+```
+
+---
+
+## Action Items
+
+1. ✅ **Field extraction complete**
+2. 🔄 **Decision needed:** How to handle Nas checkboxes?
+3. ⏳ **Update backend:** Implement two-tier checkbox logic (recommended)
+4. ⏳ **Update UI:** Show indicator for Nas limitations (optional)
+5. ⏳ **Test:** Verify all combinations work as expected
+
+---
+
+## Notes
+
+- **Extra fields** (History, Text Box 1, title1, etc.) are not critical - they're unused or label fields
+- **Field name consistency** is excellent for the 8 core text fields
+- **Checkbox naming** is identical between Thiqa and Daman (good!)
+- **Nas PDF** appears to be an older template version without checkbox support
+</file>
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="TESTING_CHECKLIST.md">
+# Testing Checklist - Examination Requests
+
+Use this checklist to systematically test all features of the updated application.
+
+---
+
+## ⚙️ Setup
+
+### 1. Environment Configuration
+- [ ] Dev server is running: `npm run dev`
+- [ ] Server accessible at: http://localhost:3000
+- [ ] [.env](.env) has `OPENAI_API_KEY` configured
+- [ ] [.env](.env) has `GMAIL_USER` and `GMAIL_PASS` (optional, for email testing)
+
+---
+
+## 🧪 Functional Testing
+
+### Landing Page
+- [ ] Page loads without errors
+- [ ] Dashboard displays "Medical Request Dashboard" heading
+- [ ] "Examination Requests" card is visible and clickable
+- [ ] 3 "Coming Soon" cards are visible but not clickable
+- [ ] Hover effects work on "Examination Requests" card
+- [ ] Mobile layout: Cards stack vertically
+- [ ] Desktop layout: 2x2 grid displayed
+
+---
+
+## 🔄 Modal Flow Testing
+
+### Test Set 1: Thiqa Insurer
+
+#### Thiqa + MRI
+- [ ] Click "Examination Requests" → Modal opens
+- [ ] Step 1: Click "Thiqa" → Advances to Step 2
+- [ ] Step 2: Click "MRI" → Advances to Step 3
+- [ ] Step 3: Hold mic button, say: "Patient has chronic lower back pain for 6 months, failed conservative treatment, needs MRI lumbar spine"
+- [ ] Recording indicator turns red and pulses
+- [ ] Release mic → "Recording Saved" appears
+- [ ] Optional: Enter email address
+- [ ] Click "Generate Request" → Processing starts
+- [ ] Step 4: Success screen appears with download button
+- [ ] Click "Download PDF"
+- [ ] **Verify PDF:**
+  - [ ] Opens without errors
+  - [ ] Only `mri_check` is ticked (✓)
+  - [ ] `ct_check`, `physiotherapy_check`, `admission_check` are unchecked
+  - [ ] All 8 text fields are filled with relevant content
+  - [ ] Filename: `thiqa-mri-{uuid}.pdf`
+
+#### Thiqa + CT Scan
+- [ ] Create new request
+- [ ] Select Thiqa → CT Scan
+- [ ] Record: "Head trauma from fall, needs CT scan of head to rule out intracranial bleeding"
+- [ ] Generate and download
+- [ ] **Verify PDF:**
+  - [ ] Only `ct_check` is ticked
+  - [ ] Other checkboxes unchecked
+  - [ ] Filename: `thiqa-ct-{uuid}.pdf`
+
+#### Thiqa + Physiotherapy
+- [ ] Create new request
+- [ ] Select Thiqa → Physiotherapy
+- [ ] Record: "Chronic shoulder pain, rotator cuff injury, failed NSAIDs and rest, needs physiotherapy"
+- [ ] Generate and download
+- [ ] **Verify PDF:**
+  - [ ] Only `physiotherapy_check` is ticked
+  - [ ] Filename: `thiqa-physiotherapy-{uuid}.pdf`
+
+#### Thiqa + Admission
+- [ ] Create new request
+- [ ] Select Thiqa → Admission
+- [ ] Record: "Severe pneumonia, patient needs hospital admission for IV antibiotics"
+- [ ] Generate and download
+- [ ] **Verify PDF:**
+  - [ ] Only `admission_check` is ticked
+  - [ ] Filename: `thiqa-admission-{uuid}.pdf`
+
+---
+
+### Test Set 2: Daman Insurer
+
+#### Daman + MRI
+- [ ] Select Daman → MRI
+- [ ] Record: "Knee pain post-injury, suspected meniscus tear, needs MRI knee"
+- [ ] **Verify PDF:**
+  - [ ] Uses Daman template (different layout from Thiqa)
+  - [ ] Only `mri_check` is ticked
+  - [ ] Filename: `daman-mri-{uuid}.pdf`
+
+#### Daman + CT Scan
+- [ ] Select Daman → CT Scan
+- [ ] Record: "Abdominal pain, suspected appendicitis, needs CT abdomen"
+- [ ] **Verify PDF:**
+  - [ ] Only `ct_check` is ticked
+  - [ ] Filename: `daman-ct-{uuid}.pdf`
+
+#### Daman + Physiotherapy
+- [ ] Select Daman → Physiotherapy
+- [ ] Record: "Post-stroke patient needs physiotherapy for rehabilitation"
+- [ ] **Verify PDF:**
+  - [ ] Only `physiotherapy_check` is ticked
+  - [ ] Filename: `daman-physiotherapy-{uuid}.pdf`
+
+#### Daman + Admission
+- [ ] Select Daman → Admission
+- [ ] Record: "Diabetic ketoacidosis, needs hospital admission"
+- [ ] **Verify PDF:**
+  - [ ] Only `admission_check` is ticked
+  - [ ] Filename: `daman-admission-{uuid}.pdf`
+
+---
+
+### Test Set 3: Nas Insurer (Text-Only)
+
+⚠️ **Note:** Nas PDFs do NOT have checkbox fields. Test type will appear in the `test` text field only.
+
+#### Nas + MRI
+- [ ] Select Nas → MRI
+- [ ] Record: "Cervical spine pain with radiculopathy, needs MRI cervical spine"
+- [ ] **Verify PDF:**
+  - [ ] Uses Nas template (smaller file, different layout)
+  - [ ] NO checkboxes visible (expected behavior)
+  - [ ] Test type "MRI" written in `test` text field
+  - [ ] Filename: `nas-mri-{uuid}.pdf`
+
+#### Nas + CT Scan
+- [ ] Select Nas → CT Scan
+- [ ] Record: "Chest pain, suspected pulmonary embolism, needs CT chest"
+- [ ] **Verify PDF:**
+  - [ ] NO checkboxes
+  - [ ] "CT Scan" in `test` field
+  - [ ] Filename: `nas-ct-{uuid}.pdf`
+
+#### Nas + Physiotherapy
+- [ ] Select Nas → Physiotherapy
+- [ ] Record: "Frozen shoulder, needs physiotherapy treatment"
+- [ ] **Verify PDF:**
+  - [ ] NO checkboxes
+  - [ ] "Physiotherapy" in `test` field
+  - [ ] Filename: `nas-physiotherapy-{uuid}.pdf`
+
+#### Nas + Admission
+- [ ] Select Nas → Admission
+- [ ] Record: "Acute asthma exacerbation, needs hospital admission"
+- [ ] **Verify PDF:**
+  - [ ] NO checkboxes
+  - [ ] "Admission" in `test` field
+  - [ ] Filename: `nas-admission-{uuid}.pdf`
+
+---
+
+## 📧 Email Testing
+
+### Email Delivery (if configured)
+- [ ] Configure [.env](.env) with Gmail credentials
+- [ ] Create request with email address: `your-email@example.com`
+- [ ] Generate PDF
+- [ ] **Verify:**
+  - [ ] PDF downloads immediately to browser
+  - [ ] Email arrives within 1-2 minutes
+  - [ ] Email subject: "{Insurer} {TestType} Authorization Request - PDF Generated"
+  - [ ] Email contains professional HTML formatting
+  - [ ] Email has PDF attachment
+  - [ ] Attachment opens correctly
+  - [ ] Attachment filename matches downloaded file
+
+### Email Optional Behavior
+- [ ] Generate request WITHOUT email → No email sent (expected)
+- [ ] Generate request with invalid email (no @) → No email sent
+- [ ] Email failure doesn't block PDF download
+
+---
+
+## ✅ Validation Testing
+
+### Step Navigation Validation
+- [ ] Cannot advance from Step 1 without selecting insurer
+- [ ] Cannot advance from Step 2 without selecting test type
+- [ ] Cannot generate PDF without recording audio
+
+### Error Handling
+- [ ] Try generating without recording → Error message: "Please complete all required steps..."
+- [ ] Try recording without microphone permission → Error: "Microphone access denied"
+- [ ] Try with invalid OpenAI key → Error message displayed
+- [ ] Close modal mid-flow → Can restart fresh
+
+### Back Button Behavior
+- [ ] Step 3 "Back" button → Returns to Step 2
+- [ ] Step 2 "Back" button → Returns to Step 1
+- [ ] Selections preserved when going back
+- [ ] Recording cleared when going back
+
+---
+
+## 🎨 UI/UX Testing
+
+### Visual Appearance
+- [ ] All text is readable
+- [ ] Colors are appropriate (Thiqa=emerald, Daman=blue, Nas=indigo)
+- [ ] Animations are smooth (no jank)
+- [ ] Modal centered on screen
+- [ ] Modal has proper backdrop blur
+- [ ] Icons display correctly
+- [ ] Recording button has gradient and pulse effect
+
+### Responsiveness
+- [ ] Test on mobile screen (< 768px)
+  - [ ] Cards stack vertically
+  - [ ] Modal is full-width with padding
+  - [ ] Touch recording works (tap and hold)
+  - [ ] Text is readable
+- [ ] Test on tablet (768px - 1024px)
+  - [ ] 2-column grid
+  - [ ] Modal sizing appropriate
+- [ ] Test on desktop (> 1024px)
+  - [ ] 2x2 grid
+  - [ ] Modal max-width respected
+
+### Accessibility
+- [ ] Tab navigation works through all buttons
+- [ ] Modal can be closed with Escape key (if implemented)
+- [ ] Focus indicators visible
+- [ ] Colors have sufficient contrast
+
+---
+
+## 🐛 Edge Cases
+
+### Audio Recording
+- [ ] Very short recording (< 1 second) → Still processes
+- [ ] Long recording (> 2 minutes) → Processes successfully
+- [ ] Silence recording → GPT generates default content
+- [ ] Background noise → Transcription still works
+
+### Network Issues
+- [ ] Slow connection → Loading indicator shown
+- [ ] API timeout → Error displayed gracefully
+- [ ] Offline → Appropriate error message
+
+### Browser Compatibility
+- [ ] Chrome/Edge (Chromium)
+- [ ] Safari (WebKit)
+- [ ] Firefox (Gecko)
+
+---
+
+## 📊 Performance Testing
+
+### Load Times
+- [ ] Landing page loads in < 2 seconds
+- [ ] Modal opens instantly
+- [ ] Step transitions are smooth (< 300ms)
+
+### API Response Times
+- [ ] Transcription: < 10 seconds
+- [ ] PDF generation: < 15 seconds total
+- [ ] Download starts immediately after processing
+
+---
+
+## 🔍 Server Log Monitoring
+
+While testing, monitor the terminal running `npm run dev` for:
+- [ ] No compilation errors
+- [ ] No runtime warnings
+- [ ] API logs show correct insurer and test type
+- [ ] Checkbox warnings only appear for Nas (expected)
+- [ ] Email success/failure logs (if testing email)
+
+---
+
+## 📝 Final Verification
+
+After completing all tests:
+- [ ] All 12 insurer/test combinations tested
+- [ ] All generated PDFs open without errors
+- [ ] Checkboxes behave as expected (Thiqa/Daman ✅, Nas ❌)
+- [ ] Email delivery works (if configured)
+- [ ] No critical bugs found
+- [ ] UI is intuitive and professional
+
+---
+
+## 🚨 Issue Tracking
+
+| Issue | Severity | Status | Notes |
+|-------|----------|--------|-------|
+| _Example: Modal doesn't close_ | Critical | Fixed | _Fixed in commit abc123_ |
+|  |  |  |  |
+|  |  |  |  |
+
+---
+
+## ✅ Sign-Off
+
+**Tested By:** ___________________
+**Date:** ___________________
+**Status:** ☐ Pass ☐ Fail
+**Notes:**
+
+---
+
+**Ready for Production?** ☐ Yes ☐ No (see issues above)
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+</file>
+
+<file path="app/globals.css">
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+</file>
+
+<file path="app/layout.tsx">
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Clinical PDF Filler",
+  description: "Fill PDF forms with clinical data extracted from images",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+</file>
+
+<file path="components/ExaminationRequestModal.tsx">
+"use client";
+
+import { useState, useRef } from "react";
+
+interface ExaminationRequestModalProps {
+    onClose: () => void;
+}
+
+export default function ExaminationRequestModal({ onClose }: ExaminationRequestModalProps) {
+    const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
+    const [insurer, setInsurer] = useState<string | null>(null);
+    const [testType, setTestType] = useState<string | null>(null);
+
+    // Recording State
+    const [isRecording, setIsRecording] = useState(false);
+    const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
+    const [processing, setProcessing] = useState(false);
+    const [result, setResult] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [sendEmail, setSendEmail] = useState<boolean>(false);
+    const [emailSending, setEmailSending] = useState(false);
+
+    const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+    const chunksRef = useRef<Blob[]>([]);
+    const streamRef = useRef<MediaStream | null>(null);
+
+    // --- Step 1: Insurer Selection ---
+    const insurers = [
+        { name: "Thiqa", color: "bg-emerald-500" },
+        { name: "Daman", color: "bg-blue-500" },
+        { name: "Nas", color: "bg-indigo-500" },
+        { name: "Adnic", color: "bg-teal-500" },
+        { name: "Buhayra", color: "bg-cyan-500" },
+        { name: "Inaya", color: "bg-violet-500" },
+        { name: "Sukoun", color: "bg-rose-500" },
+    ];
+
+    const handleInsurerSelect = (name: string) => {
+        setInsurer(name);
+        setStep(2);
+    };
+
+    // --- Step 2: Test Selection ---
+    const tests = [
+        { name: "MRI", icon: "🧲" },
+        { name: "CT Scan", icon: "☢️" },
+        { name: "Physiotherapy", icon: "🤸" },
+        { name: "Admission", icon: "🏥" },
+        { name: "Medical Report", icon: "📝" },
+    ];
+
+    const handleTestSelect = (name: string) => {
+        setTestType(name);
+        setStep(3);
+    };
+
+    // --- Step 3: Recording Logic (Reused) ---
+    const getSupportedMimeType = (): string => {
+        const types = ["audio/webm", "audio/mp4", "audio/wav"];
+        for (const type of types) {
+            if (MediaRecorder.isTypeSupported(type)) return type;
+        }
+        return "audio/webm";
+    };
+
+    const startRecording = async () => {
+        try {
+            setError(null);
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            streamRef.current = stream;
+            const mimeType = getSupportedMimeType();
+            const mediaRecorder = new MediaRecorder(stream, { mimeType });
+            mediaRecorderRef.current = mediaRecorder;
+            chunksRef.current = [];
+
+            mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) chunksRef.current.push(e.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(chunksRef.current, { type: mimeType });
+                setAudioBlob(blob);
+                if (streamRef.current) streamRef.current.getTracks().forEach((t) => t.stop());
+            };
+
+            mediaRecorder.start();
+            setIsRecording(true);
+        } catch (err) {
+            console.error(err);
+            setError("Microphone access denied.");
+        }
+    };
+
+    const stopRecording = () => {
+        if (mediaRecorderRef.current && isRecording) {
+            mediaRecorderRef.current.stop();
+            setIsRecording(false);
+        }
+    };
+
+    const handleSubmit = async () => {
+        if (!audioBlob || !insurer || !testType) return;
+        setProcessing(true);
+        setError(null);
+
+        try {
+            const formData = new FormData();
+            formData.append("audio", audioBlob, "recording.webm");
+            formData.append("insurer", insurer);
+            formData.append("testType", testType);
+
+            const response = await fetch("/api/process-voice", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.error || "Failed");
+            }
+
+            const data = await response.json();
+            setResult(data.filePath); // Store file path instead of blob URL
+            setStep(4);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Error processing");
+        } finally {
+            setProcessing(false);
+        }
+    };
+
+    const handleSendEmail = async () => {
+        if (!audioBlob || !insurer || !testType) return;
+        setEmailSending(true);
+
+        try {
+            const formData = new FormData();
+            formData.append("audio", audioBlob, "recording.webm");
+            formData.append("insurer", insurer);
+            formData.append("testType", testType);
+            formData.append("sendEmail", "yes");
+
+            const response = await fetch("/api/process-voice", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.error || "Failed to send email");
+            }
+
+            setSendEmail(true);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Error sending email");
+        } finally {
+            setEmailSending(false);
+        }
+    };
+
+    return (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+
+                {/* Header */}
+                <div className="p-6 border-b border-gray-100 flex justify-between items-center">
+                    <div>
+                        <h2 className="text-xl font-bold text-gray-800">New Examination Request</h2>
+                        <p className="text-sm text-gray-500">
+                            {step === 1 && "Select Insurance Provider"}
+                            {step === 2 && `Requesting for ${insurer}: Select Test`}
+                            {step === 3 && `Dictate Clinical Notes for ${testType}`}
+                            {step === 4 && "Request Generated"}
+                        </p>
+                    </div>
+                    <button onClick={onClose} className="text-gray-400 hover:text-red-500 transition-colors">
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Content */}
+                <div className="p-8 overflow-y-auto flex-1">
+
+                    {/* STEP 1: Insurer */}
+                    {step === 1 && (
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {insurers.map((ins) => (
+                                <button
+                                    key={ins.name}
+                                    onClick={() => handleInsurerSelect(ins.name)}
+                                    className={`h-32 rounded-xl flex flex-col items-center justify-center p-4 transition-all hover:scale-105 hover:shadow-lg border border-gray-100 group`}
+                                >
+                                    <div className={`w-12 h-12 rounded-full ${ins.color} mb-3 flex items-center justify-center text-white text-xl font-bold shadow-md group-hover:shadow-lg`}>
+                                        {ins.name[0]}
+                                    </div>
+                                    <span className="font-semibold text-gray-700 text-sm">{ins.name}</span>
+                                </button>
+                            ))}
+                        </div>
+                    )}
+
+                    {/* STEP 2: Test Type */}
+                    {step === 2 && (
+                        <div className="grid grid-cols-2 gap-4">
+                            {tests.map((t) => (
+                                <button
+                                    key={t.name}
+                                    onClick={() => handleTestSelect(t.name)}
+                                    className="h-32 bg-gray-50 rounded-xl flex flex-col items-center justify-center hover:bg-violet-50 hover:border-violet-200 border border-transparent transition-all"
+                                >
+                                    <span className="text-4xl mb-2">{t.icon}</span>
+                                    <span className="font-medium text-gray-700">{t.name}</span>
+                                </button>
+                            ))}
+                            <button
+                                onClick={() => setStep(1)}
+                                className="col-span-2 mt-4 text-sm text-gray-400 hover:text-gray-600"
+                            >
+                                ← Back to Insurer Selection
+                            </button>
+                        </div>
+                    )}
+
+                    {/* STEP 3: Voice Input */}
+                    {step === 3 && (
+                        <div className="flex flex-col items-center space-y-8 py-4">
+                            <button
+                                onMouseDown={startRecording}
+                                onMouseUp={stopRecording}
+                                onMouseLeave={stopRecording}
+                                onTouchStart={(e) => { e.preventDefault(); startRecording(); }}
+                                onTouchEnd={(e) => { e.preventDefault(); stopRecording(); }}
+                                disabled={processing}
+                                className={`w-32 h-32 rounded-full flex items-center justify-center transition-all shadow-xl ${isRecording
+                                    ? "bg-red-500 scale-110 animate-pulse ring-4 ring-red-200"
+                                    : "bg-gradient-to-br from-violet-500 to-fuchsia-500 hover:scale-105 hover:shadow-2xl"
+                                    } disabled:opacity-50 disabled:scale-100`}
+                            >
+                                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+                                    <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
+                                </svg>
+                            </button>
+
+                            <div className="text-center space-y-2">
+                                <p className="font-medium text-gray-700">
+                                    {processing ? "Processing..." : isRecording ? "Recording..." : audioBlob ? "Recording Saved" : "Hold to Record"}
+                                </p>
+                                <p className="text-sm text-gray-400 max-w-xs mx-auto">
+                                    Describe the complaint, history, and justification for the {testType}.
+                                </p>
+                            </div>
+
+                            {error && <div className="text-red-500 bg-red-50 px-4 py-2 rounded-lg text-sm">{error}</div>}
+
+                            <div className="flex gap-3 w-full">
+                                <button
+                                    onClick={() => setStep(2)}
+                                    className="flex-1 py-3 rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 font-medium"
+                                >
+                                    Back
+                                </button>
+                                {audioBlob && !isRecording && (
+                                    <button
+                                        onClick={handleSubmit}
+                                        disabled={processing}
+                                        className="flex-1 py-3 rounded-lg bg-black text-white hover:bg-gray-800 transition-colors font-medium disabled:opacity-50"
+                                    >
+                                        {processing ? "Generating..." : "Generate Request"}
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* STEP 4: Success */}
+                    {step === 4 && result && (
+                        <div className="text-center py-8">
+                            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg className="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <h3 className="text-2xl font-bold text-gray-800 mb-2">Request Saved!</h3>
+                            <p className="text-gray-500 mb-4">Your {insurer} authorization form for {testType} has been generated and saved.</p>
+
+                            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-lg mx-auto">
+                                <p className="text-sm font-medium text-gray-700 mb-2">📁 File saved to:</p>
+                                <p className="text-xs text-gray-600 font-mono break-all">{result}</p>
+                            </div>
+
+                            {sendEmail && (
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-6 max-w-lg mx-auto">
+                                    <p className="text-sm text-green-700">
+                                        ✉️ Email sent to <span className="font-semibold">farhat.rassi@eih.ae</span>
+                                    </p>
+                                </div>
+                            )}
+
+                            <div className="flex gap-4 justify-center">
+                                <button
+                                    onClick={() => {
+                                        setStep(1);
+                                        setAudioBlob(null);
+                                        setResult(null);
+                                        setSendEmail(false);
+                                    }}
+                                    className="px-6 py-3 text-gray-600 font-medium hover:text-gray-900"
+                                >
+                                    Create Another
+                                </button>
+                                {!sendEmail && (
+                                    <button
+                                        onClick={handleSendEmail}
+                                        disabled={emailSending}
+                                        className="px-8 py-3 bg-blue-600 text-white rounded-xl font-bold shadow-lg hover:bg-blue-700 hover:scale-105 transition-all disabled:opacity-50 disabled:scale-100"
+                                    >
+                                        {emailSending ? "Sending..." : "Send Email"}
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
+</file>
+
+<file path="app/api/process-voice/route.ts">
+import { NextRequest, NextResponse } from "next/server";
+import { PDFDocument } from "pdf-lib";
+import OpenAI from "openai";
+import { readFile, writeFile, mkdir } from "fs/promises";
+import path from "path";
+import { randomUUID } from "crypto";
+import nodemailer from "nodemailer";
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+interface ClinicalFormData {
+  complaint: string;
+  etiology_duration: string;
+  conservative_result: string;
+  physical_exam: string;
+  goal: string;
+  icd10: string;
+  diagnosis: string; // New field
+  test: string;
+  test_code: string;
+  test_check: string;
+}
+
+async function transcribeAudio(audioBuffer: ArrayBuffer, mimeType: string): Promise<string> {
+  const extension = mimeType.includes("webm")
+    ? "webm"
+    : mimeType.includes("mp4")
+      ? "mp4"
+      : mimeType.includes("wav")
+        ? "wav"
+        : mimeType.includes("ogg")
+          ? "ogg"
+          : "webm";
+
+  const file = new File([audioBuffer], `audio.${extension}`, { type: mimeType });
+
+  const transcription = await openai.audio.transcriptions.create({
+    file: file,
+    model: "whisper-1",
+    language: "en",
+  });
+
+  return transcription.text;
+}
+
+async function generateClinicalData(transcript: string, testType: string): Promise<ClinicalFormData> {
+  // Logic for dynamic prompts
+  let specificInstructions = "";
+
+  if (testType === "Medical Report") {
+    specificInstructions = `
+- For test: You MUST set this exactly to "conservative treatment"
+- For test_code: You MUST leave this empty string ""
+- For test_check: Return "no" (or empty string)
+`;
+  } else if (testType === "Physiotherapy") {
+    specificInstructions = `
+- For test: Use "Physiotherapy"
+- For test_code: You MUST set this exactly to "12 sessions"
+- For test_check: Return "yes"
+`;
+  } else {
+    // Standard logic for MRI, CT, Admission, etc.
+    specificInstructions = `
+- For test: Use the specific ${testType} name (e.g. "MRI Lumbar Spine")
+- For test_code: Provide the CPT or procedure code
+- For test_check: Return "yes"
+`;
+  }
+
+  const systemPrompt = `You are a medical documentation assistant. 
+The user has explicitly requested a: ${testType}
+
+IMPORTANT REQUIREMENTS:
+- For complaint: Extract the chief complaint
+- For etiology_duration: Extract etiology and duration
+- For diagnosis: Provide a clear medical diagnosis based on the symptoms (e.g. "Lumbar Radiculopathy", "Acute Bronchitis")
+- For conservative_result: List 3-4 treatments... ALWAYS end with "failure to address pain"
+- For physical_exam: List 4-5 relevant physical findings
+- For goal: Explain why this request is needed
+- For icd10: Provide the ICD-10 code
+${specificInstructions}
+
+Respond ONLY with valid JSON in this exact format:
+{
+  "complaint": "...",
+  "etiology_duration": "...",
+  "conservative_result": "...",
+  "physical_exam": "...",
+  "goal": "...",
+  "icd10": "...",
+  "diagnosis": "...",
+  "test": "...",
+  "test_code": "...",
+  "test_check": "..." 
+}`;
+
+  const response = await openai.chat.completions.create({
+    model: "gpt-4o",
+    messages: [
+      { role: "system", content: systemPrompt },
+      { role: "user", content: `Clinical description: ${transcript}` },
+    ],
+    response_format: { type: "json_object" },
+    temperature: 0.3,
+  });
+
+  const content = response.choices[0].message.content || "{}";
+  return JSON.parse(content) as ClinicalFormData;
+}
+
+async function fillPdfForm(
+  data: ClinicalFormData,
+  insurer: string,
+  testType: string
+): Promise<{ pdfBytes: Uint8Array; filePath: string }> {
+
+  // 1. Select the correct PDF file
+  let pdfFilename = "thiqa-fillable.pdf"; // Default fallback
+  const ins = insurer.toLowerCase();
+
+  const insurerMap: Record<string, string> = {
+    thiqa: "thiqa-fillable.pdf",
+    daman: "daman-fillable.pdf",
+    nas: "nas-fillable.pdf",
+    adnic: "adnic-fillable.pdf",
+    buhayra: "buhayra-fillable.pdf",
+    inaya: "inaya-fillable.pdf",
+    sukoun: "sukoun-fillable.pdf",
+  };
+
+  if (insurerMap[ins]) {
+    pdfFilename = insurerMap[ins];
+  } else {
+    // If unknown, fallback to thiqa but maybe warn?
+    console.warn(`Unknown insurer ${insurer}, falling back to Thiqa`);
+  }
+
+  const pdfPath = path.join(process.cwd(), "public", pdfFilename);
+  console.log(`Using PDF template: ${pdfFilename}`);
+
+  const pdfBytes = await readFile(pdfPath);
+  const pdfDoc = await PDFDocument.load(pdfBytes);
+  const form = pdfDoc.getForm();
+
+  // 2. Fill text fields
+  const textFieldMappings: { pdfField: string; dataKey: keyof ClinicalFormData }[] = [
+    { pdfField: "complaint", dataKey: "complaint" },
+    { pdfField: "etiology_duration", dataKey: "etiology_duration" },
+    { pdfField: "conservative_result", dataKey: "conservative_result" },
+    { pdfField: "physical_exam", dataKey: "physical_exam" },
+    { pdfField: "goal", dataKey: "goal" },
+    { pdfField: "icd10", dataKey: "icd10" },
+    { pdfField: "diagnosis", dataKey: "diagnosis" }, // New field
+    { pdfField: "test", dataKey: "test" },
+    { pdfField: "test_code", dataKey: "test_code" },
+  ];
+
+  for (const mapping of textFieldMappings) {
+    try {
+      const field = form.getTextField(mapping.pdfField);
+      // Ensure we don't pass null/undefined
+      const value = data[mapping.dataKey] || "";
+      field.setText(value);
+    } catch (e) {
+      // Some PDFs might NOT have 'diagnosis' etc.
+      // console.warn(`Could not fill field "${mapping.pdfField}":`, e);
+      // Squelch this common warning if fields vary by PDF
+    }
+  }
+
+  // 3. Handle Checkboxes
+  // If "Medical Report", we probably don't tick any boxes?
+  // User says: Report does not include any test.
+
+  if (testType !== "Medical Report") {
+    const checkboxesToSet: Record<string, boolean> = {
+      mri_check: false,
+      ct_check: false,
+      physiotherapy_check: false,
+      admission_check: false,
+    };
+
+    const type = testType.toLowerCase();
+    if (type.includes("mri")) checkboxesToSet.mri_check = true;
+    else if (type.includes("ct")) checkboxesToSet.ct_check = true;
+    else if (type.includes("physio")) checkboxesToSet.physiotherapy_check = true;
+    else if (type.includes("admission")) checkboxesToSet.admission_check = true;
+
+    for (const [boxName, shouldCheck] of Object.entries(checkboxesToSet)) {
+      try {
+        const checkBox = form.getCheckBox(boxName);
+        if (shouldCheck) checkBox.check();
+        else checkBox.uncheck();
+      } catch (e) {
+        // Field might not exist in all PDFs
+      }
+    }
+  }
+
+  const filledPdfBytes = await pdfDoc.save();
+
+  // Save to ~/eihRequests/{current-date}/ directory
+  const homeDir = process.env.HOME || process.env.USERPROFILE || "~";
+  const currentDate = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+  const dateFolder = path.join(homeDir, "eihRequests", currentDate);
+
+  // Create date-based folder if it doesn't exist
+  await mkdir(dateFolder, { recursive: true });
+
+  const filename = `${insurer.toLowerCase()}-${testType.replace(/\s+/g, '-')}-${randomUUID()}.pdf`;
+  const filePath = path.join(dateFolder, filename);
+  await writeFile(filePath, filledPdfBytes);
+
+  console.log(`PDF saved to: ${filePath}`);
+
+  return { pdfBytes: filledPdfBytes, filePath: filePath };
+}
+
+async function sendEmailWithPdf(
+  pdfBytes: Uint8Array,
+  filename: string,
+  insurer: string,
+  testType: string
+): Promise<void> {
+  const recipientEmail = "farhat.rassi@eih.ae";
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: recipientEmail,
+    subject: `${insurer} ${testType} Authorization Request - PDF Generated`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #2563eb;">Medical Authorization Request</h2>
+        <p>Your <strong>${testType}</strong> authorization request form for <strong>${insurer}</strong> has been generated.</p>
+
+        <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p style="margin: 5px 0;"><strong>Insurer:</strong> ${insurer}</p>
+          <p style="margin: 5px 0;"><strong>Test Type:</strong> ${testType}</p>
+          <p style="margin: 5px 0;"><strong>File:</strong> ${filename}</p>
+        </div>
+
+        <p>Please find the completed authorization form attached to this email.</p>
+
+        <p style="color: #6b7280; font-size: 14px; margin-top: 30px;">
+          This is an automated message. Please do not reply to this email.
+        </p>
+      </div>
+    `,
+    attachments: [
+      {
+        filename: filename,
+        content: Buffer.from(pdfBytes),
+        contentType: "application/pdf",
+      },
+    ],
+  };
+
+  await transporter.sendMail(mailOptions);
+  console.log(`Email sent successfully to ${recipientEmail}`);
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const formData = await request.formData();
+    const audioFile = formData.get("audio") as File | null;
+    const insurer = (formData.get("insurer") as string) || "Thiqa";
+    const testType = (formData.get("testType") as string) || "MRI";
+    const sendEmail = formData.get("sendEmail") as string | null; // "yes" or null
+
+    if (!audioFile) {
+      return NextResponse.json({ error: "Audio file is required" }, { status: 400 });
+    }
+
+    const audioArrayBuffer = await audioFile.arrayBuffer();
+    const mimeType = audioFile.type || "audio/webm";
+
+    // Step 1: Transcribe
+    console.log("Step 1: Transcribing...");
+    const transcript = await transcribeAudio(audioArrayBuffer, mimeType);
+    console.log("Transcript:", transcript);
+
+    // Step 2: Generate data (aware of test type)
+    console.log(`Step 2: Generating data for ${testType}...`);
+    const clinicalData = await generateClinicalData(transcript, testType);
+    console.log("Clinical data:", clinicalData);
+
+    // Step 3: Fill PDF
+    console.log(`Step 3: Filling ${insurer} PDF...`);
+    const { pdfBytes, filePath } = await fillPdfForm(clinicalData, insurer, testType);
+
+    // Step 4: Send email if user approved
+    if (sendEmail === "yes") {
+      const filename = `${insurer.toLowerCase()}-${testType.replace(/\s+/g, '-')}-form.pdf`;
+      sendEmailWithPdf(pdfBytes, filename, insurer, testType).catch((err) => {
+        console.error("Email sending failed:", err);
+        // Don't fail the request if email fails
+      });
+      console.log("Email will be sent to farhat.rassi@eih.ae");
+    }
+
+    // Return success with file path
+    return NextResponse.json({
+      success: true,
+      filePath: filePath,
+      insurer: insurer,
+      testType: testType,
+      emailSent: sendEmail === "yes",
+    });
+  } catch (error) {
+    console.error("Error processing request:", error);
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "An error occurred" },
+      { status: 500 }
+    );
+  }
+}
+</file>
+
+<file path="app/page.tsx">
+"use client";
+
+import { useState } from "react";
+import ExaminationRequestModal from "../components/ExaminationRequestModal";
+
+export default function Home() {
+  const [showExamModal, setShowExamModal] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-violet-100">
+
+      {/* Top Navigation / Header */}
+      <header className="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center sticky top-0 z-10">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-gradient-to-tr from-violet-600 to-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+            M
+          </div>
+          <span className="font-bold text-xl tracking-tight text-gray-800">MediFill AI</span>
+        </div>
+        <div className="h-8 w-8 rounded-full bg-gray-200 overflow-hidden border border-gray-300">
+          {/* Placeholder Avatar */}
+          <svg className="w-full h-full text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 24H0v-2.153C0 17.432 6.057 14.86 12 14.86s12 2.572 12 6.987V24zM12 2.607c3.48 0 6.302 2.8s6.302 6.253-2.822 6.253-6.302-2.8-6.302-6.253 2.822-6.253 6.302-6.253z" /></svg>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-6 py-12">
+
+        {/* Hero Section */}
+        <div className="mb-12 text-center md:text-left">
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
+            Welcome back, Dr. Farhat
+          </h1>
+          <p className="text-xl text-gray-500 max-w-2xl">
+            What would you like to process today? Select a workflow to get started.
+          </p>
+        </div>
+
+        {/* Dashboard Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          {/* Card 1: Examination Requests (Primary) */}
+          <button
+            onClick={() => setShowExamModal(true)}
+            className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-violet-100 flex flex-col items-start overflow-hidden text-left"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+
+            <div className="w-14 h-14 bg-violet-100 rounded-2xl flex items-center justify-center text-violet-600 mb-6 group-hover:bg-violet-600 group-hover:text-white transition-colors duration-300 relative z-10">
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+
+            <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-violet-700 transition-colors">
+              Examination Requests
+            </h3>
+            <p className="text-gray-500 leading-relaxed mb-6">
+              Generate submitting forms for Thiqa, Daman, or Nas. Supports MRI, CT, Physiotherapy, and Admissions.
+            </p>
+
+            <span className="flex items-center text-violet-600 font-bold group-hover:translate-x-2 transition-transform">
+              Start Request
+              <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </button>
+
+          {/* Card 2: Placeholder */}
+          <div className="bg-white/60 rounded-3xl p-8 border border-gray-100 flex flex-col items-start opacity-80">
+            <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400 mb-6">
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-500 mb-3">
+              Coming Soon
+            </h3>
+            <p className="text-gray-400 leading-relaxed">
+              Additional workflows will appear here as they are built.
+            </p>
+          </div>
+
+        </div>
+      </main>
+
+      {/* Modals */}
+      {showExamModal && (
+        <ExaminationRequestModal onClose={() => setShowExamModal(false)} />
+      )}
+
+    </div>
+  );
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "fill-pdf",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.0.5",
+    "nodemailer": "^7.0.11",
+    "openai": "^6.9.1",
+    "pdf-lib": "^1.17.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/nodemailer": "^7.0.4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
+</file>
+
+</files>

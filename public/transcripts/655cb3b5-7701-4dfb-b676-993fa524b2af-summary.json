@@ -1,0 +1,25 @@
+{
+  "chief_complaint": "Back pain for one week",
+  "history_of_present_illness": "Patient reports back has been hurting for one week. Pain began after a fall while playing basketball. No other details provided in the encounter.",
+  "assessment": "Acute back pain for one week following a fall during basketball. Etiology not confirmed from available data; no definitive diagnosis provided.",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Exact anatomic location of back pain (eg, lumbar, thoracic, focal level)",
+    "Onset timing relative to fall (immediate vs delayed) and progression",
+    "Pain severity (eg, pain scale)",
+    "Pain character (sharp, dull, aching) and exacerbating/relieving factors",
+    "Radiation of pain to legs or presence of radicular symptoms",
+    "Neurologic symptoms or deficits (numbness, tingling, weakness)",
+    "Bowel or bladder dysfunction",
+    "Prior history of back pain or spine disease",
+    "Associated symptoms (fever, weight loss, systemic signs)",
+    "Treatments tried prior to visit (rest, ice, meds, physical therapy)",
+    "Medications and allergies",
+    "Social and functional impact (ability to ambulate, work limitations)",
+    "Physical exam findings",
+    "Vital signs",
+    "Imaging or diagnostic studies performed or planned",
+    "Planned treatment or disposition"
+  ]
+}

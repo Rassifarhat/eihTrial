@@ -1,0 +1,40 @@
+{
+  "sessionId": "34495008-e2ab-4422-8c04-ebcc5821738c",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "2e7a96c0-5bd3-4613-905c-e831d621883a",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.",
+      "backTranslationPending": false,
+      "timestamp": 1766081331381,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic."
+    },
+    {
+      "id": "ad04cdac-2638-4d95-8a14-49a8a716bb49",
+      "direction": "patient-to-doc",
+      "originalText": "هل لديك أي ألم في الظهر أو أي شيء مشابه كما أخبرتني في المرة السابقة؟هل لديك أي ألم في الظهر أو أي شيء مشابه كما أخبرتني في المرة السابقة؟",
+      "backTranslationPending": false,
+      "timestamp": 1766081350867,
+      "backTranslatedEnglish": "Do you have any back pain or anything similar as you told me last time? Do you have any back pain or anything similar as you told me last time?"
+    },
+    {
+      "id": "ff058da1-e0e4-4d60-9f3d-e1ee7f94060e",
+      "direction": "doc-to-patient",
+      "originalText": "I have back pain, yes.I have back pain, yes.",
+      "backTranslationPending": false,
+      "timestamp": 1766081366195,
+      "backTranslatedEnglish": "I have back pain, yes.I have back pain, yes."
+    },
+    {
+      "id": "6732c5f6-5430-48e5-a66b-927d59762de1",
+      "direction": "doc-to-patient",
+      "originalText": "It is less than before.It is less than before.",
+      "backTranslationPending": false,
+      "timestamp": 1766081369404,
+      "backTranslatedEnglish": "It is less than before. It is less than before."
+    }
+  ],
+  "savedAt": "2025-12-18T18:09:56.220Z"
+}

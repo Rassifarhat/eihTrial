@@ -1,0 +1,18 @@
+{
+  "chief_complaint": "Small non-displaced fracture of the leg",
+  "history_of_present_illness": "Patient has a small, non-displaced fracture of the leg. Provider explained this is stable and does not require surgery. Plan discussed to apply a plaster cast; provider stated the cast must be kept for one month, and also offered a three-week medical leave certificate and instructed the patient to return after three weeks for reassessment and possible removal of the plaster. Patient was told to go to the emergency room for casting.",
+  "assessment": "Stable, non-displaced leg fracture (conservative management appropriate). No surgical intervention required per discussion. Unclear exact immobilization duration (one month vs three weeks to reassess).",
+  "plan": "Patient to go to the emergency room for application of a plaster cast to the affected leg. Provide medical leave certificate (discussed as three weeks; patient also mentioned needing 2 days—clarification needed). Reassess in 3 weeks to determine whether to remove or extend cast; if concern for worsening pain, increasing swelling, numbness, or other complications, return to ED earlier. No surgery planned at this time.",
+  "follow_up": "Return to clinic/orthopedics in 3 weeks for reassessment and decision on cast removal; earlier return to ED if symptoms worsen.",
+  "missing_information": [
+    "Which leg (left or right) is fractured",
+    "Exact bone and anatomical location of the fracture (e.g., tibia, fibula, ankle, etc.)",
+    "Date and mechanism of injury",
+    "Imaging details (X-ray report specifics)",
+    "Neurovascular status of the affected limb on exam",
+    "Whether the cast was placed today in the ED or needs scheduling",
+    "Definitive duration of immobilization (one month vs three weeks)",
+    "Definitive duration of medical leave (3 weeks vs 2 days)",
+    "Pain level, analgesic plan, allergies, current medications, and relevant medical history/comorbidities"
+  ]
+}

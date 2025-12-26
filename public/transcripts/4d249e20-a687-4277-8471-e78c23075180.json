@@ -1,0 +1,64 @@
+{
+  "sessionId": "4d249e20-a687-4277-8471-e78c23075180",
+  "doctorLanguage": "english",
+  "patientLanguage": "hindi",
+  "entries": [
+    {
+      "id": "28c6c720-32fb-499a-83ef-eaa2322c86f2",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Tagalog. Please speak normally in Tagalog.This is an interpreter service. I will translate between English and Tagalog. Please speak normally in Tagalog.",
+      "backTranslationPending": false,
+      "timestamp": 1766142773525,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Tagalog. Please speak normally in Tagalog. This is an interpreter service. I will translate between English and Tagalog. Please speak normally in Tagalog."
+    },
+    {
+      "id": "f6d2eb2c-41fa-48ac-ba4f-7a077168a9c3",
+      "direction": "doc-to-patient",
+      "originalText": "I’m ready to translate whenever you are.I’m ready to translate whenever you are.",
+      "backTranslationPending": false,
+      "timestamp": 1766142775351,
+      "backTranslatedEnglish": "I’m ready to translate whenever you are.I’m ready to translate whenever you are."
+    },
+    {
+      "id": "9de22b84-9a2e-4fa8-ac3d-7cd7f96f187e",
+      "direction": "patient-to-doc",
+      "originalText": "Sige, kumusta ka ngayon? May nararamdaman ka bang sakit?Sige, kumusta ka ngayon? May nararamdaman ka bang sakit?",
+      "backTranslationPending": false,
+      "timestamp": 1766142789058,
+      "backTranslatedEnglish": "Okay, how are you now? Are you feeling any pain? Okay, how are you now? Are you feeling any pain?"
+    },
+    {
+      "id": "1511d4fd-e19d-4232-95fd-06ff18877b13",
+      "direction": "doc-to-patient",
+      "originalText": "ज़रूर, कृपया बताएं कि आपको क्या अनुवाद चाहिए।ज़रूर, कृपया बताएं कि आपको क्या अनुवाद चाहिए।",
+      "backTranslationPending": false,
+      "timestamp": 1766144178169,
+      "backTranslatedEnglish": "Sure, please tell me what translation you need. Sure, please tell me what translation you need."
+    },
+    {
+      "id": "94e3c67f-b8f8-41a0-afb1-9d835a6096e7",
+      "direction": "doc-to-patient",
+      "originalText": "ठीक है, कृपया बताएं कि आप क्या अनुवाद करवाना चाहते हैं।ठीक है, कृपया बताएं कि आप क्या अनुवाद करवाना चाहते हैं।",
+      "backTranslationPending": false,
+      "timestamp": 1766144185931,
+      "backTranslatedEnglish": "Okay, please tell me what you would like to have translated. Okay, please tell me what you would like to have translated."
+    },
+    {
+      "id": "92bdd90f-da30-4d50-909e-eafd2a3e43b7",
+      "direction": "patient-to-doc",
+      "originalText": "Could you please provide the phrase or sentence you would like to be translated?Could you please provide the phrase or sentence you would like to be translated?",
+      "backTranslationPending": false,
+      "timestamp": 1766144191371,
+      "backTranslatedEnglish": "Could you please provide the phrase or sentence you would like to be translated?Could you please provide the phrase or sentence you would like to be translated?"
+    },
+    {
+      "id": "88ea87c7-7829-4825-bbbf-14a3ec6b19d7",
+      "direction": "patient-to-doc",
+      "originalText": "[unclear][unclear]",
+      "backTranslationPending": false,
+      "timestamp": 1766144193238,
+      "backTranslatedEnglish": "[unclear][unclear]"
+    }
+  ],
+  "savedAt": "2025-12-19T11:36:39.781Z"
+}

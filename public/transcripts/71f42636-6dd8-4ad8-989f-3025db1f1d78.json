@@ -1,0 +1,104 @@
+{
+  "sessionId": "71f42636-6dd8-4ad8-989f-3025db1f1d78",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "a826a682-534b-450d-8c33-d673da43d777",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.",
+      "backTranslationPending": false,
+      "timestamp": 1766135649635,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic."
+    },
+    {
+      "id": "5ffc946a-752f-4a41-95dd-43f90791a740",
+      "direction": "patient-to-doc",
+      "originalText": "Peace be upon you.Peace be upon you.",
+      "backTranslationPending": false,
+      "timestamp": 1766135659055,
+      "backTranslatedEnglish": "Peace be upon you. Peace be upon you."
+    },
+    {
+      "id": "bcd472f4-f1b9-417a-b592-d03f97440ad4",
+      "direction": "doc-to-patient",
+      "originalText": "هل لديك أي ألم في ظهرك؟هل لديك أي ألم في ظهرك؟",
+      "backTranslationPending": false,
+      "timestamp": 1766135666915,
+      "backTranslatedEnglish": "Do you have any pain in your back? Do you have any pain in your back?"
+    },
+    {
+      "id": "25baa9fb-91bb-4b8d-95e0-77f67a933f71",
+      "direction": "doc-to-patient",
+      "originalText": "A little bit, for about two weeks.A little bit, for about two weeks.",
+      "backTranslationPending": false,
+      "timestamp": 1766135673986,
+      "backTranslatedEnglish": "A little bit, for about two weeks.A little bit, for about two weeks."
+    },
+    {
+      "id": "ebdbaa5c-17cb-4a77-8cf2-6adf5149b00b",
+      "direction": "patient-to-doc",
+      "originalText": "وقل لي، هل هناك أي شيء قمت به قبل بدء الألم، مثل أنك رفعت شيئاً ثقيلاً، أو سقطت، أو انزلقت على الأرض، أي شيء مهم قد يكون سبباً لبدء الألم؟وقل لي، هل هناك أي شيء قمت به قبل بدء الألم، مثل أنك رفعت شيئاً ثقيلاً، أو سقطت، أو انزلقت على الأرض، أي شيء مهم قد يكون سبباً لبدء الألم؟",
+      "backTranslationPending": false,
+      "timestamp": 1766135695240,
+      "backTranslatedEnglish": "Tell me, was there anything you did before the pain began, such as lifting something heavy, falling, or slipping on the ground, anything significant that could have caused the pain to start?\nTell me, was there anything you did before the pain began, such as lifting something heavy, falling, or slipping on the ground, anything significant that could have caused the pain to start?"
+    },
+    {
+      "id": "4f7629fd-285f-44e5-9e6c-cb93b474e185",
+      "direction": "doc-to-patient",
+      "originalText": "Yes, I was lifting something very heavy, something heavy.Yes, I was lifting something very heavy, something heavy.",
+      "backTranslationPending": false,
+      "timestamp": 1766135711510,
+      "backTranslatedEnglish": "Yes, I was lifting something very heavy, something heavy.Yes, I was lifting something very heavy, something heavy."
+    },
+    {
+      "id": "1be472bf-38e2-4da3-ba02-27ca51ad422b",
+      "direction": "patient-to-doc",
+      "originalText": "دعنا نحاول أن نقيس ذلك قليلاً، نقيسه قليلاً، ثم سأتوقف وأتحدث، وهكذا.دعنا نحاول أن نقيس ذلك قليلاً، نقيسه قليلاً، ثم سأتوقف وأتحدث، وهكذا.",
+      "backTranslationPending": false,
+      "timestamp": 1766135726995,
+      "backTranslatedEnglish": "Let's try to measure that a little, measure it a little, then I'll stop and talk, and so on. Let's try to measure that a little, measure it a little, then I'll stop and talk, and so on."
+    },
+    {
+      "id": "766253a3-07da-4ff7-b370-9c566c80c605",
+      "direction": "doc-to-patient",
+      "originalText": "هل تقول إنك لم تتزلغ، إذن لا يوجد أي صدمة؟هل تقول إنك لم تتزلغ، إذن لا يوجد أي صدمة؟",
+      "backTranslationPending": false,
+      "timestamp": 1766135743425,
+      "backTranslatedEnglish": "Are you saying that you did not tatazlagh, then there is no shock at all? Are you saying that you did not tatazlagh, then there is no shock at all?"
+    },
+    {
+      "id": "578c3809-6345-48cd-9bc1-9cf5639793fc",
+      "direction": "doc-to-patient",
+      "originalText": "No, no, there was nothing.No, no, there was nothing.",
+      "backTranslationPending": false,
+      "timestamp": 1766135751863,
+      "backTranslatedEnglish": "No, no, there was nothing.No, no, there was nothing."
+    },
+    {
+      "id": "39ec236d-8e1c-45fb-b90d-a6ddd68f60bb",
+      "direction": "doc-to-patient",
+      "originalText": "[Unclear][Unclear]",
+      "backTranslationPending": false,
+      "timestamp": 1766135753895,
+      "backTranslatedEnglish": "[Unclear][Unclear]"
+    },
+    {
+      "id": "723316bf-065d-4887-a332-8dc229feff06",
+      "direction": "patient-to-doc",
+      "originalText": "عندما تتحدث، تتوقف بعض الشيء ثم تتكلم.عندما تتحدث، تتوقف بعض الشيء ثم تتكلم.",
+      "backTranslationPending": false,
+      "timestamp": 1766135766128,
+      "backTranslatedEnglish": "When you speak, you pause a little and then speak. When you speak, you pause a little and then speak."
+    },
+    {
+      "id": "352453d1-c51b-4725-bf83-2608a872802a",
+      "direction": "patient-to-doc",
+      "originalText": "حسناً، دعونا نجرب مرة أخرى. سوف أتوقف قليلاً ثم أتحدث.حسناً، دعونا نجرب مرة أخرى. سوف أتوقف قليلاً ثم أتحدث.",
+      "backTranslationPending": false,
+      "timestamp": 1766135769740,
+      "backTranslatedEnglish": "Okay, let's try again. I will pause briefly and then speak. Okay, let's try again. I will pause briefly and then speak."
+    }
+  ],
+  "savedAt": "2025-12-19T09:16:16.687Z"
+}

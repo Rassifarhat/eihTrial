@@ -1,0 +1,24 @@
+{
+  "chief_complaint": "Low back pain",
+  "history_of_present_illness": "Patient reports mild low back pain for about two weeks. Pain began after lifting a very heavy object. Patient denies falling or slipping. No other details about pain characteristics, neurological symptoms, or prior treatments were provided in the conversation.",
+  "assessment": "Most consistent with acute mechanical low back pain/strain related to heavy lifting. No documented red flag symptoms in the transcript, but neurologic review and full exam are not available.",
+  "plan": "Perform focused physical examination including neurologic testing (strength, sensation, reflexes) and assess for red flags. Recommend conservative management: activity modification/avoid heavy lifting, consider NSAIDs if appropriate, and referral to physical therapy if persistent. Reserve imaging (e.g., lumbar X-ray or MRI) for presence of red flags or lack of improvement/worsening. Advise patient to seek immediate care for worsening pain, new numbness/weakness, or bowel/bladder changes.",
+  "follow_up": "Re-evaluate with clinician if no improvement within ~2 weeks or sooner if symptoms worsen or new neurologic or systemic symptoms develop.",
+  "missing_information": [
+    "Exact pain location (specific lumbar level vs general back)",
+    "Pain severity (numeric pain scale)",
+    "Pain character (sharp/aching), timing, aggravating/relieving factors",
+    "Radiation to legs or dermatomal distribution",
+    "Numbness, tingling, or limb weakness",
+    "Bowel or bladder dysfunction",
+    "Fever or systemic symptoms",
+    "Prior episodes of back pain",
+    "Current medications and allergies",
+    "Past medical history and comorbidities",
+    "Social history/occupation details",
+    "Physical examination findings",
+    "Vital signs",
+    "Any treatments already tried (analgesics, heat, rest)",
+    "Imaging results if obtained"
+  ]
+}

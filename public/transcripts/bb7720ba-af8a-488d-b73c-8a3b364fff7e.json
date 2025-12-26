@@ -1,0 +1,40 @@
+{
+  "sessionId": "bb7720ba-af8a-488d-b73c-8a3b364fff7e",
+  "doctorLanguage": "english",
+  "patientLanguage": "hindi",
+  "entries": [
+    {
+      "id": "35a324a6-d645-4263-b0d0-01101f3edbec",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.",
+      "backTranslationPending": false,
+      "timestamp": 1766145235074,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi. This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi."
+    },
+    {
+      "id": "f1c46fa4-ef54-4618-b12b-d6525604a1f6",
+      "direction": "doc-to-patient",
+      "originalText": "अब मैं उन्हें बता सकता हूँ।अब मैं उन्हें बता सकता हूँ।",
+      "backTranslationPending": false,
+      "timestamp": 1766145236369,
+      "backTranslatedEnglish": "Now I can tell them. Now I can tell them."
+    },
+    {
+      "id": "593720c2-1238-474e-811d-febad132d6c6",
+      "direction": "patient-to-doc",
+      "originalText": "कोई भी पानी उसे बिल्कुल नहीं छूना चाहिए, ध्यान रखना, वरना आपको त्वचा में समस्याएँ हो सकती हैं, इसलिए किसी भी कीमत पर पानी से बचना होगा, समझे?कोई भी पानी उसे बिल्कुल नहीं छूना चाहिए, ध्यान रखना, वरना आपको त्वचा में समस्याएँ हो सकती हैं, इसलिए किसी भी कीमत पर पानी से बचना होगा, समझे?",
+      "backTranslationPending": false,
+      "timestamp": 1766145256176,
+      "backTranslatedEnglish": "No water should touch it at all, be careful, otherwise you may have skin problems, so you must avoid water at all costs, understand? No water should touch it at all, be careful, otherwise you may have skin problems, so you must avoid water at all costs, understand?"
+    },
+    {
+      "id": "1ea741be-d0d7-4b47-95e5-b0ec3745ccef",
+      "direction": "doc-to-patient",
+      "originalText": "Alright.Alright.",
+      "backTranslationPending": false,
+      "timestamp": 1766145267607,
+      "backTranslatedEnglish": "Alright. Alright."
+    }
+  ],
+  "savedAt": "2025-12-19T11:54:39.481Z"
+}

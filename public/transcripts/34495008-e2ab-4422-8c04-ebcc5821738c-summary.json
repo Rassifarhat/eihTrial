@@ -1,0 +1,25 @@
+{
+  "chief_complaint": "Back pain",
+  "history_of_present_illness": "Patient reports back pain that is currently less than before. No other details provided.",
+  "assessment": "Back pain with reported improvement compared to prior encounter.",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "onset/date of onset",
+    "duration/course over time",
+    "pain severity (pain scale)",
+    "precise location and radiation",
+    "character of pain (sharp, dull, throbbing, etc.)",
+    "aggravating and relieving factors",
+    "functional limitations (mobility, activities of daily living)",
+    "prior treatments and response (medications, physical therapy, injections)",
+    "current medications",
+    "neurological symptoms (numbness, tingling, weakness)",
+    "bowel or bladder dysfunction",
+    "fever or systemic symptoms",
+    "physical exam findings",
+    "imaging or laboratory results",
+    "allergies",
+    "social/occupational impact"
+  ]
+}

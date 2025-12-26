@@ -1,0 +1,222 @@
+{
+  "sessionId": "f8dc4ab5-2c86-44d3-9ee3-c6b41587c83e",
+  "doctorLanguage": "english",
+  "patientLanguage": "hindi",
+  "entries": [
+    {
+      "id": "8517f6db-e234-4043-b1a9-63b7112f5638",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.",
+      "backTranslationPending": false,
+      "timestamp": 1766144220619,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi."
+    },
+    {
+      "id": "3302d9e6-6f89-4394-9909-fc5a59cd426c",
+      "direction": "patient-to-doc",
+      "originalText": "तो आपका समस्या क्या है, कृपया स्पष्ट रूप से समझाएं ताकि हम समझ सकें।तो आपका समस्या क्या है, कृपया स्पष्ट रूप से समझाएं ताकि हम समझ सकें।",
+      "backTranslationPending": false,
+      "timestamp": 1766144235644,
+      "backTranslatedEnglish": "So what is your problem, please explain clearly so that we can understand. So what is your problem, please explain clearly so that we can understand."
+    },
+    {
+      "id": "e19f7a2b-cde0-41d3-b27f-9678e4199c8b",
+      "direction": "doc-to-patient",
+      "originalText": "Okay, please explain the problem clearly in Hindi so that we can understand.Okay, please explain the problem clearly in Hindi so that we can understand.",
+      "backTranslationPending": false,
+      "timestamp": 1766144247187,
+      "backTranslatedEnglish": "Okay, please explain the problem clearly in Hindi so that we can understand. Okay, please explain the problem clearly in Hindi so that we can understand."
+    },
+    {
+      "id": "a16352c0-5a9c-4b4c-ba7e-25761fc4a000",
+      "direction": "patient-to-doc",
+      "originalText": "ज़रूर, कृपया बताएं कि आपकी समस्या क्या है, ताकि हम उसे समझ सकें।ज़रूर, कृपया बताएं कि आपकी समस्या क्या है, ताकि हम उसे समझ सकें।",
+      "backTranslationPending": false,
+      "timestamp": 1766144264606,
+      "backTranslatedEnglish": "Sure, please tell us what your problem is so that we can understand it. Sure, please tell us what your problem is so that we can understand it."
+    },
+    {
+      "id": "c1d736f3-08f7-42b3-b1db-102cc9fc277d",
+      "direction": "patient-to-doc",
+      "originalText": "No problem, please explain what you need in detail.No problem, please explain what you need in detail.",
+      "backTranslationPending": false,
+      "timestamp": 1766144266391,
+      "backTranslatedEnglish": "No problem, please explain what you need in detail.No problem, please explain what you need in detail."
+    },
+    {
+      "id": "5c2379f6-5a9b-4f2d-9796-2cfa91b6336e",
+      "direction": "doc-to-patient",
+      "originalText": "The foot has a little pain, that’s all.The foot has a little pain, that’s all.",
+      "backTranslationPending": false,
+      "timestamp": 1766144276253,
+      "backTranslatedEnglish": "The foot has a little pain, that's all. The foot has a little pain, that's all."
+    },
+    {
+      "id": "530587b0-ff06-41c1-91fc-ac03e0c4df33",
+      "direction": "patient-to-doc",
+      "originalText": "ठीक है, लेकिन क्या आपको कोई चोट लगी थी? क्या आपको कोई अचानक गिरने का अनुभव हुआ? बस कृपया और विस्तार से बताएं कि कब से यह दर्द है, क्या कोई चीज़ गिर गई थी उस पर, ताकि हम आपको सही तरीके से मदद कर सकें।ठीक है, लेकिन क्या आपको कोई चोट लगी थी? क्या आपको कोई अचानक गिरने का अनुभव हुआ? बस कृपया और विस्तार से बताएं कि कब से यह दर्द है, क्या कोई चीज़ गिर गई थी उस पर, ताकि हम आपको सही तरीके से मदद कर सकें।",
+      "backTranslationPending": false,
+      "timestamp": 1766144298069,
+      "backTranslatedEnglish": "Okay, but did you get injured? Did you experience any sudden fall? Please tell us in more detail how long this pain has been there, whether anything fell on it, so that we can help you properly.\nOkay, but did you get injured? Did you experience any sudden fall? Please tell us in more detail how long this pain has been there, whether anything fell on it, so that we can help you properly."
+    },
+    {
+      "id": "e50bad39-6330-4241-8efe-bbfe77c4df71",
+      "direction": "doc-to-patient",
+      "originalText": "Sure, please go ahead and explain more. When did the pain start? Did anything fall on it? This information will help us understand how to proceed.Sure, please go ahead and explain more. When did the pain start? Did anything fall on it? This information will help us understand how to proceed.",
+      "backTranslationPending": false,
+      "timestamp": 1766144316153,
+      "backTranslatedEnglish": "Sure, please go ahead and explain more. When did the pain start? Did anything fall on it? This information will help us understand how to proceed.Sure, please go ahead and explain more. When did the pain start? Did anything fall on it? This information will help us understand how to proceed."
+    },
+    {
+      "id": "74232a5d-e5c0-4dda-98b3-4d7f97a4f746",
+      "direction": "patient-to-doc",
+      "originalText": "कृपया बताएं कि आपको कब से दर्द है, क्या आपको कोई चोट लगी थी, कोई चीज़ गिर गई थी, या कुछ अपने महसूस किया था। इसी तरह स्पष्ट बताएं।कृपया बताएं कि आपको कब से दर्द है, क्या आपको कोई चोट लगी थी, कोई चीज़ गिर गई थी, या कुछ अपने महसूस किया था। इसी तरह स्पष्ट बताएं।",
+      "backTranslationPending": false,
+      "timestamp": 1766144335827,
+      "backTranslatedEnglish": "Please tell since when you have had the pain, whether you had any injury, whether anything fell, or whether you felt something. Please explain clearly in the same way.\nPlease tell since when you have had the pain, whether you had any injury, whether anything fell, or whether you felt something. Please explain clearly in the same way."
+    },
+    {
+      "id": "55f5097f-c9f4-44f1-afb6-501e7a5db1ac",
+      "direction": "doc-to-patient",
+      "originalText": "There’s been an injury for two days, right? Yes.There’s been an injury for two days, right? Yes.",
+      "backTranslationPending": false,
+      "timestamp": 1766144355697,
+      "backTranslatedEnglish": "There's been an injury for two days, right? Yes. There's been an injury for two days, right? Yes."
+    },
+    {
+      "id": "48623f21-8ac6-4acd-9b23-07226483c837",
+      "direction": "patient-to-doc",
+      "originalText": "[unclear][unclear]",
+      "backTranslationPending": false,
+      "timestamp": 1766144381241,
+      "backTranslatedEnglish": "[unclear][unclear]"
+    },
+    {
+      "id": "2ba6d53a-27c5-4103-b1e7-d336d30ec3dd",
+      "direction": "doc-to-patient",
+      "originalText": "मुझे समझ आ गया, कृपया बताएं कि आपको किस चीज़ से चोट लगी, क्या कोई भारी चीज़ गिर गई थी, क्या कोई घटना हुई थी?मुझे समझ आ गया, कृपया बताएं कि आपको किस चीज़ से चोट लगी, क्या कोई भारी चीज़ गिर गई थी, क्या कोई घटना हुई थी?",
+      "backTranslationPending": false,
+      "timestamp": 1766144396637,
+      "backTranslatedEnglish": "I understand, please tell me what you were injured by — did any heavy object fall, was there any incident? I understand, please tell me what you were injured by — did any heavy object fall, was there any incident?"
+    },
+    {
+      "id": "1364e25f-f87b-4da2-837d-6bf55f4252f0",
+      "direction": "doc-to-patient",
+      "originalText": "I’m sorry, I didn’t catch that part clearly. Could you please repeat what happened?I’m sorry, I didn’t catch that part clearly. Could you please repeat what happened?",
+      "backTranslationPending": false,
+      "timestamp": 1766144407339,
+      "backTranslatedEnglish": "I’m sorry, I didn’t catch that part clearly. Could you please repeat what happened?I’m sorry, I didn’t catch that part clearly. Could you please repeat what happened?"
+    },
+    {
+      "id": "eff00852-bc9a-45de-aed4-e7facab4e907",
+      "direction": "patient-to-doc",
+      "originalText": "ठीक है, कृपया स्पष्ट करें कि आपको किस तरह की चोट लगी थी, कब से दर्द है, और कोई चीज़ गिरी थी या टकराई थी?ठीक है, कृपया स्पष्ट करें कि आपको किस तरह की चोट लगी थी, कब से दर्द है, और कोई चीज़ गिरी थी या टकराई थी?",
+      "backTranslationPending": false,
+      "timestamp": 1766144409487,
+      "backTranslatedEnglish": "Okay, please clarify what kind of injury you had, how long you have had the pain, and whether something fell or hit you? Okay, please clarify what kind of injury you had, how long you have had the pain, and whether something fell or hit you?"
+    },
+    {
+      "id": "0f11644a-65fa-4c41-8013-1711fcdeae46",
+      "direction": "patient-to-doc",
+      "originalText": "ठीक है, कृपया आराम से बताएं कि आपको क्या परेशानी हो रही है ताकि हम उसे बेहतर समझ सकें।ठीक है, कृपया आराम से बताएं कि आपको क्या परेशानी हो रही है ताकि हम उसे बेहतर समझ सकें।",
+      "backTranslationPending": false,
+      "timestamp": 1766144415354,
+      "backTranslatedEnglish": "Okay, please tell us calmly what problem you are having so that we can understand it better. Okay, please tell us calmly what problem you are having so that we can understand it better."
+    },
+    {
+      "id": "184e895b-a86c-4518-b9ad-585e9242b499",
+      "direction": "patient-to-doc",
+      "originalText": "हम अब एक्स-रे करेंगे।हम अब एक्स-रे करेंगे।",
+      "backTranslationPending": false,
+      "timestamp": 1766144417338,
+      "backTranslatedEnglish": "We will now take an X-ray. We will now take an X-ray."
+    },
+    {
+      "id": "f93c1e97-0c09-44b8-8cda-01705be11187",
+      "direction": "doc-to-patient",
+      "originalText": "क्या आपने उसके लिए एक्स-रे किया है या अभी नहीं किया?क्या आपने उसके लिए एक्स-रे किया है या अभी नहीं किया?",
+      "backTranslationPending": false,
+      "timestamp": 1766144426391,
+      "backTranslatedEnglish": "Have you done an X-ray for him/her or not yet?\nHave you done an X-ray for him/her or not yet?"
+    },
+    {
+      "id": "e36f345d-5ef9-427f-b31c-be0e93be493a",
+      "direction": "patient-to-doc",
+      "originalText": "क्या आपने इसके लिए एक्स-रे कराया है या अभी नहीं कराया?क्या आपने इसके लिए एक्स-रे कराया है या अभी नहीं कराया?",
+      "backTranslationPending": false,
+      "timestamp": 1766144447100,
+      "backTranslatedEnglish": "Have you had an X-ray for this or not yet? Have you had an X-ray for this or not yet?"
+    },
+    {
+      "id": "45f2bc28-fe14-4484-8d98-0126cccc98c1",
+      "direction": "patient-to-doc",
+      "originalText": "क्या आपने एक्स-रे किया है या नहीं किया?क्या आपने एक्स-रे किया है या नहीं किया?",
+      "backTranslationPending": false,
+      "timestamp": 1766144449181,
+      "backTranslatedEnglish": "Have you had an X-ray or not? Have you had an X-ray or not?"
+    },
+    {
+      "id": "79ad3572-9766-4a52-a2e6-f12823cf8b00",
+      "direction": "doc-to-patient",
+      "originalText": "No, not yet.No, not yet.",
+      "backTranslationPending": false,
+      "timestamp": 1766144457073,
+      "backTranslatedEnglish": "No, not yet.No, not yet."
+    },
+    {
+      "id": "e2c2a0d3-e147-4682-b900-278f77d8c94b",
+      "direction": "doc-to-patient",
+      "originalText": "हम एक्स-रे करेंगे।हम एक्स-रे करेंगे।",
+      "backTranslationPending": false,
+      "timestamp": 1766144459591,
+      "backTranslatedEnglish": "We will do an X-ray. We will do an X-ray."
+    },
+    {
+      "id": "a04b6ebe-e842-4373-bf6f-14b9decc4ce5",
+      "direction": "doc-to-patient",
+      "originalText": "ठीक है, हम एक्स-रे करेंगे।ठीक है, हम एक्स-रे करेंगे।",
+      "backTranslationPending": false,
+      "timestamp": 1766144462053,
+      "backTranslatedEnglish": "Okay, we will do an X-ray. Okay, we will do an X-ray."
+    },
+    {
+      "id": "69891e83-22aa-4928-a256-4666940c5f64",
+      "direction": "patient-to-doc",
+      "originalText": "हम अभी एक्स-रे करेंगे, ठीक है?हम अभी एक्स-रे करेंगे, ठीक है?",
+      "backTranslationPending": false,
+      "timestamp": 1766144470008,
+      "backTranslatedEnglish": "We will take an X-ray now, okay? We will take an X-ray now, okay?"
+    },
+    {
+      "id": "9463d239-928c-42c5-868c-5dd00a52c681",
+      "direction": "patient-to-doc",
+      "originalText": "अब आप नीचे जा सकते हैं, एक्स-रे करवा सकते हैं और फिर वापस आ सकते हैं।अब आप नीचे जा सकते हैं, एक्स-रे करवा सकते हैं और फिर वापस आ सकते हैं।",
+      "backTranslationPending": false,
+      "timestamp": 1766144482601,
+      "backTranslatedEnglish": "Now you can go downstairs, get an X-ray, and then come back. Now you can go downstairs, get an X-ray, and then come back."
+    },
+    {
+      "id": "b7df70fb-788f-4ac5-80fc-884e8cc7d279",
+      "direction": "patient-to-doc",
+      "originalText": "यह सिस्टम पर है।यह सिस्टम पर है।",
+      "backTranslationPending": false,
+      "timestamp": 1766144484174,
+      "backTranslatedEnglish": "This is on the system. This is on the system."
+    },
+    {
+      "id": "2da1dd79-f1c8-40e2-8f1d-f300aa92869f",
+      "direction": "doc-to-patient",
+      "originalText": "कौन सा पैर, दाहिना या बायाँ?कौन सा पैर, दाहिना या बायाँ?",
+      "backTranslationPending": true,
+      "timestamp": 1766144494696
+    },
+    {
+      "id": "758d0c74-2ce2-4dba-86b9-3e9613cf3680",
+      "direction": "doc-to-patient",
+      "originalText": "कृपया बताएँ कि किस पैर का एक्स-रे करना है, दाहिना या बायाँ?कृपया बताएँ कि किस पैर का एक्स-रे करना है, दाहिना या बायाँ?",
+      "backTranslationPending": true,
+      "timestamp": 1766144496344
+    }
+  ],
+  "savedAt": "2025-12-19T11:41:41.887Z"
+}

@@ -1,0 +1,76 @@
+{
+  "sessionId": "05c97d12-60c5-4802-955a-eb4664da08b0",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "91af3ef5-3459-4981-8d22-721e5fedff7c",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766169550340,
+      "outputEnglish": "How can I help you today?"
+    },
+    {
+      "id": "c07ad681-3320-4663-bb16-a4687876fa8d",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169563708,
+      "outputEnglish": "I have a cough, and it's been going on for three weeks, and it's not getting better.",
+      "inputEnglish": "I have a cough, and it's been going on for three weeks, and it's not getting better."
+    },
+    {
+      "id": "bc729a78-7b79-4ebd-aef9-ad306f36e18e",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169578995,
+      "outputEnglish": "Did you say \"cough\" or do you mean pain in the lower back?"
+    },
+    {
+      "id": "aaf6ab27-ecf6-4c37-8a23-d89daf7968a0",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169589554,
+      "outputEnglish": "No, no, my lower back hurts. The lower part of my back.",
+      "inputEnglish": "No, no, my lower back hurts. The lower part of my back."
+    },
+    {
+      "id": "d9ed88b9-f951-43bf-9db3-1c0a3faa5412",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169600285,
+      "outputEnglish": "Okay, and how long has the pain been ongoing?"
+    },
+    {
+      "id": "a8b5be43-5f9c-4b06-98be-e8acb18beddf",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169626344,
+      "outputEnglish": "About three weeks ago, I lifted something heavy at home, and at first I didn't feel anything, but then it got much worse after two or three days, to the point where the pain is unbearable.",
+      "inputEnglish": "About three weeks ago, I lifted something heavy at home, and at first I didn't feel anything, but then it got much worse after two or three days, to the point where the pain is unbearable."
+    },
+    {
+      "id": "b768a664-cac0-4127-a9c9-6b6f3acf1cc0",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169678418,
+      "outputEnglish": "Alright, the staff said it's just a muscular issue. Don't worry—I don't think there's a problem, but to be sure let's do X-rays, especially since you're about 40 years old and that age can sometimes be associated with a herniated (slipped) disc after lifting something. So let's do the X-rays first to make sure everything is okay, and based on the images we'll decide what to do."
+    },
+    {
+      "id": "bb8c044f-bc48-4e42-96cf-5ff008929cc0",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766169705603,
+      "outputEnglish": "Sure, okay, let's go ahead.",
+      "inputEnglish": "Sure, okay, let's go ahead."
+    }
+  ],
+  "savedAt": "2025-12-19T18:41:54.523Z"
+}

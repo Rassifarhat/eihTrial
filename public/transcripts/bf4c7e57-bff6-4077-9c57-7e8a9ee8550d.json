@@ -1,0 +1,16 @@
+{
+  "sessionId": "bf4c7e57-bff6-4077-9c57-7e8a9ee8550d",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "3640f4f2-a999-4095-b052-6d1acef96fc9",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168721751,
+      "outputEnglish": "Okay, I will now listen to what you say and translate it. Please tell me what you want translated."
+    }
+  ],
+  "savedAt": "2025-12-19T18:25:53.134Z"
+}

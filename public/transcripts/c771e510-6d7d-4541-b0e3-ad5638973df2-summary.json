@@ -1,0 +1,19 @@
+{
+  "chief_complaint": "Back pain",
+  "history_of_present_illness": "Patient was seen previously for back pain. Medications given at that visit provided partial relief but the patient still has ongoing pain and is uncomfortable. Patient prefers to have an X-ray to further evaluate the problem.",
+  "assessment": "Persistent back pain with partial improvement after prior medication. No additional history, exam, or imaging available from this encounter.",
+  "plan": "Proceed with spinal X-ray per patient preference to further evaluate cause of pain. Consider analgesic adjustment if needed and re-evaluate after imaging.",
+  "follow_up": "Follow-up after X-ray results or sooner if symptoms worsen; specific timing not documented.",
+  "missing_information": [
+    "Onset and duration of current episode",
+    "Exact anatomic location of back pain (eg, lumbar vs thoracic)",
+    "Pain severity (eg, pain score)",
+    "Radiation of pain or associated neurologic symptoms (numbness, weakness)",
+    "Aggravating or relieving factors and functional limitations",
+    "Past medical history and prior back problems or surgeries",
+    "Medication list and allergies",
+    "Physical exam findings (eg, neurologic or musculoskeletal exam)",
+    "Previous imaging results",
+    "Vitals and relevant objective data"
+  ]
+}

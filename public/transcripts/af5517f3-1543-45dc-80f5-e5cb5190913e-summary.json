@@ -1,0 +1,21 @@
+{
+  "chief_complaint": "Right knee pain",
+  "history_of_present_illness": "Patient was seen last week for right-sided knee pain. Reports slight improvement with the medications provided but continues to have intermittent pain. Pain is sometimes absent and at other times comes on suddenly. Patient reports an audible cracking sound from the knee.",
+  "assessment": "Persistent right knee pain with partial response to current therapy. Intermittent sudden pain episodes and audible crepitus reported. Exact etiology and severity are unclear from available information.",
+  "plan": "Discuss possibility of increasing the dose of the current analgesic medication as suggested by the clinician; monitor response. Continue current treatment until reassessment. Further diagnostic evaluation and targeted management to be considered based on response and additional information.",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Exact onset and total duration of symptoms",
+    "Pain severity (numeric pain score) and nature (sharp/dull) in detail",
+    "Specific medication names, doses, and adherence",
+    "Physical exam findings (inspection, palpation, range of motion, stability)",
+    "History of trauma or prior knee injury",
+    "Prior imaging or investigations (X-ray, MRI, ultrasound, labs)",
+    "Associated symptoms (swelling, redness, locking, giving way, fever)",
+    "Functional limitations (walking, stairs, work activities)",
+    "Medical history, current medications, and allergies",
+    "Frequency and triggers of sudden pain episodes",
+    "Previous treatments and their effectiveness",
+    "Patient preferences and consent regarding changing medication dose"
+  ]
+}

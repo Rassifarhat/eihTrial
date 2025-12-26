@@ -1,0 +1,31 @@
+{
+  "sessionId": "5eb826c8-b260-4f89-86ae-34731cfb7536",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "c2d6ec06-71ee-4846-9b7c-f1c668314c38",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766756781542,
+      "outputEnglish": "How are you feeling now about your back?"
+    },
+    {
+      "id": "943f51cd-e904-4543-8fef-5e811914a6fb",
+      "direction": "patient-to-doc",
+      "outputPending": true,
+      "inputPending": true,
+      "timestamp": 1766756792139
+    },
+    {
+      "id": "bc303979-016b-40a5-a851-5ac6e860c647",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766756802275,
+      "outputEnglish": "Okay, can you tell me exactly what you mean?"
+    }
+  ],
+  "savedAt": "2025-12-26T13:46:49.581Z"
+}

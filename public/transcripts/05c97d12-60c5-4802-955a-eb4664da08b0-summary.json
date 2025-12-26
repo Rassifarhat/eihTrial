@@ -1,0 +1,21 @@
+{
+  "chief_complaint": "Lower back pain for three weeks (patient initially mentioned cough but clarified pain in the lower part of the back).",
+  "history_of_present_illness": "Onset about three weeks ago after lifting a heavy object at home. Initially no pain, then worsened after 2–3 days to the point described as 'unbearable'. Pain has been ongoing for three weeks and not improving. Clinic staff thought it was muscular. Patient is approximately 40 years old (per doctor).",
+  "assessment": "Working assessment: likely musculoskeletal (muscle strain) lower back pain given mechanism (heavy lifting). Differential includes lumbar disc herniation given lifting mechanism and patient age; need imaging to exclude bony/disc pathology.",
+  "plan": "Obtain lumbar spine X-rays first to evaluate for bony pathology; reassess and decide further management based on imaging results. Reassurance provided in conversation.",
+  "follow_up": "Follow up after X-ray imaging/results for further management decisions.",
+  "missing_information": [
+    "Pain severity (numeric pain scale)",
+    "Exact location laterality (left/right) and more precise anatomic detail",
+    "Radiation of pain to buttocks/legs or presence of sciatica",
+    "Neurologic symptoms (numbness, tingling, weakness)",
+    "Bowel or bladder dysfunction",
+    "Onset timeline specifics beyond 'about three weeks' (exact date)",
+    "Prior history of back pain or spine surgery",
+    "Past medical history, medications, allergies",
+    "Physical exam findings (inspection, range of motion, neuro exam)",
+    "Vital signs",
+    "Type/views of X-ray ordered and who will perform it",
+    "Imaging results"
+  ]
+}

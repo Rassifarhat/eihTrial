@@ -1,0 +1,23 @@
+{
+  "chief_complaint": "Pain in my back",
+  "history_of_present_illness": "Patient reports ongoing pain in the back. No additional details provided regarding onset, duration, severity, specific location, radiation, associated symptoms, or prior treatments.",
+  "assessment": "Unspecified back pain based on patient report; insufficient information to determine etiology.",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "onset of back pain",
+    "duration of symptoms",
+    "pain severity (e.g., scale 0-10)",
+    "specific anatomic location (upper, mid, lower back, left/right)",
+    "radiation to legs or elsewhere",
+    "associated symptoms (numbness, weakness, bowel/bladder changes, fever)",
+    "aggravating or relieving factors",
+    "prior evaluations or imaging",
+    "current and prior treatments/medications for this pain",
+    "functional impact (work, mobility, activities of daily living)",
+    "past medical history and surgical history",
+    "current medications and allergies",
+    "vital signs and physical exam findings",
+    "social history (occupation, tobacco/alcohol/drug use)"
+  ]
+}

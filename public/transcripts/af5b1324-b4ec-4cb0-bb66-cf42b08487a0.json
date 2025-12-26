@@ -1,0 +1,16 @@
+{
+  "sessionId": "af5b1324-b4ec-4cb0-bb66-cf42b08487a0",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "42ce9e74-ba5a-494e-b3c2-9223fd9d8201",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.",
+      "backTranslationPending": false,
+      "timestamp": 1766084240275,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic."
+    }
+  ],
+  "savedAt": "2025-12-18T18:57:38.539Z"
+}

@@ -1,0 +1,22 @@
+{
+  "chief_complaint": "Ongoing pain (location not specified), improved somewhat after prior medication but still present.",
+  "history_of_present_illness": "Patient received medication prior to this visit and reports partial improvement but persistent pain. Patient prefers imaging to clarify the underlying problem. Provider discussed possibly adjusting the medication dose and recommended imaging—starting with X-ray and considering MRI for further evaluation.",
+  "assessment": "Persistent pain with partial response to prior medication. Etiology unclear; further evaluation with imaging is indicated.",
+  "plan": "1) Adjust medication dosage as clinically appropriate (details not specified). 2) Order X-ray imaging. 3) Consider MRI if X-ray is non-diagnostic or if clinically indicated. 4) Reassess symptoms after medication adjustment and after imaging results are available.",
+  "follow_up": "Patient to obtain recommended imaging (X-ray ± MRI) and return for reassessment/review of results. Specific timing for follow-up not specified.",
+  "missing_information": [
+    "Location of pain",
+    "Onset and duration of symptoms",
+    "Pain severity (e.g., pain scale)",
+    "Character and radiation of pain",
+    "Aggravating and relieving factors",
+    "Exact medication(s) given prior (name, dose, route, timing)",
+    "Allergies",
+    "Current medication list",
+    "Relevant past medical, surgical, and social history",
+    "Physical exam findings",
+    "Vital signs",
+    "Contraindications or contraindication screening for MRI (e.g., implants)",
+    "Planned timing/urgency for imaging and follow-up appointment"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "chief_complaint": "Pain on both sides with stretching (patient reports pain when stretching on both sides).",
+  "history_of_present_illness": "Patient reports pain on both sides that is painful with stretching. No additional details provided regarding onset, duration, severity, or associated symptoms. Provider stated plan to obtain knee X-rays to evaluate the problem.",
+  "assessment": "Bilateral pain aggravated by stretching, presumed to involve the knees based on plan for knee X-rays. Further characterization and diagnosis pending imaging and additional history/exam.",
+  "plan": "Obtain X-rays of the knees to evaluate the problem.",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Onset and duration of pain",
+    "Exact anatomic location(s) (which joints/regions 'both sides' refers to)",
+    "Severity and quality of pain",
+    "Aggravating and relieving factors beyond stretching",
+    "Associated symptoms (swelling, redness, warmth, instability, locking, numbness, systemic symptoms)",
+    "Physical exam findings",
+    "Past medical history and surgical history",
+    "Medication list and allergies",
+    "Prior imaging or treatments tried",
+    "Functional limitations and impact on activities",
+    "Plan for follow-up timing and next steps after X-rays"
+  ]
+}

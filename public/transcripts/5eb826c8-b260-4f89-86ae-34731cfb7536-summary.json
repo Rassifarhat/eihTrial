@@ -1,0 +1,26 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "unknown",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "patient's response to 'How are you feeling now about your back?'",
+    "patient's response to 'Can you tell me exactly what you mean?'",
+    "onset and duration of back symptoms",
+    "pain location and radiation",
+    "pain severity (scale)",
+    "pain quality (e.g., sharp, dull, burning)",
+    "aggravating and relieving factors",
+    "functional limitations (ADLs, work impact)",
+    "neurological symptoms (numbness, tingling, weakness, bowel/bladder changes)",
+    "prior treatments and their effectiveness (medications, therapy, injections, surgeries)",
+    "current medications",
+    "allergies",
+    "past medical and surgical history",
+    "social history (occupation, tobacco/alcohol/drugs)",
+    "recent imaging or laboratory results",
+    "vital signs and physical exam findings",
+    "patient goals and expectations"
+  ]
+}

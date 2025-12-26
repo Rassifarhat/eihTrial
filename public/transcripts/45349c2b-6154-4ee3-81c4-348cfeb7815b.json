@@ -1,0 +1,56 @@
+{
+  "sessionId": "45349c2b-6154-4ee3-81c4-348cfeb7815b",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "54a17530-f6ec-446e-8b4f-926058408769",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.",
+      "backTranslationPending": false,
+      "timestamp": 1766135835834,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic."
+    },
+    {
+      "id": "87d5ee1e-3ce9-4295-b901-a2dd34aa2881",
+      "direction": "doc-to-patient",
+      "originalText": "If someone... [wait for more context to come through]If someone... [wait for more context to come through]",
+      "backTranslationPending": false,
+      "timestamp": 1766135843602,
+      "backTranslatedEnglish": "If someone... [wait for more context to come through]If someone... [wait for more context to come through]"
+    },
+    {
+      "id": "307df833-3452-4d24-b63b-06618ace52ab",
+      "direction": "patient-to-doc",
+      "originalText": "من فضلك أخبرني ما الذي تريد ترجمته بالضبط.من فضلك أخبرني ما الذي تريد ترجمته بالضبط.",
+      "backTranslationPending": false,
+      "timestamp": 1766135845453,
+      "backTranslatedEnglish": "Please tell me exactly what you want translated. Please tell me exactly what you want translated."
+    },
+    {
+      "id": "8e8e6b61-f328-4d7e-966e-73407aa02fe9",
+      "direction": "patient-to-doc",
+      "originalText": "حسناً، أنا هنا للترجمة. من فضلك أخبرني ما الذي تريد ترجمته.حسناً، أنا هنا للترجمة. من فضلك أخبرني ما الذي تريد ترجمته.",
+      "backTranslationPending": false,
+      "timestamp": 1766135847527,
+      "backTranslatedEnglish": "Okay, I'm here to translate. Please tell me what you want translated. Okay, I'm here to translate. Please tell me what you want translated."
+    },
+    {
+      "id": "56b310c3-3794-4b83-af71-0ece02379516",
+      "direction": "doc-to-patient",
+      "originalText": "حسناً، هل شعرت بأي ألم في الظهر، وأخبرني منذ متى وأنت تشعر به؟حسناً، هل شعرت بأي ألم في الظهر، وأخبرني منذ متى وأنت تشعر به؟",
+      "backTranslationPending": false,
+      "timestamp": 1766135865076,
+      "backTranslatedEnglish": "Okay, have you experienced any back pain, and tell me how long you've been experiencing it? Okay, have you experienced any back pain, and tell me how long you've been experiencing it?"
+    },
+    {
+      "id": "5927ab81-ecc3-4496-8bd7-b619f67090d3",
+      "direction": "patient-to-doc",
+      "originalText": "حسناً، هل تشعر بالانزعاج لأن الأمر استغرق وقتاً طويلاً؟حسناً، هل تشعر بالانزعاج لأن الأمر استغرق وقتاً طويلاً؟",
+      "backTranslationPending": false,
+      "timestamp": 1766135882841,
+      "backTranslatedEnglish": "Okay, are you bothered that it took so long? Okay, are you bothered that it took so long?"
+    }
+  ],
+  "savedAt": "2025-12-19T09:18:49.419Z"
+}

@@ -1,0 +1,23 @@
+{
+  "sessionId": "e438868f-f3aa-47ac-806c-5684ae2c1125",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "d62f54b4-43df-4d2c-b787-5a36850ca51b",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766757235874,
+      "outputEnglish": "So how are you feeling today? Do you still feel any pain in your back?"
+    },
+    {
+      "id": "6f6de680-6b7e-4456-8332-a0b10646178d",
+      "direction": "patient-to-doc",
+      "outputPending": true,
+      "inputPending": true,
+      "timestamp": 1766757249412
+    }
+  ],
+  "savedAt": "2025-12-26T13:54:17.045Z"
+}

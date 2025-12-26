@@ -1,0 +1,88 @@
+{
+  "sessionId": "c09c6e78-7f94-4b70-a68f-dd0bddb939bc",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "d079aca8-8767-40eb-9c47-f6d7acee1176",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168121906,
+      "outputEnglish": "Hello (Hello)."
+    },
+    {
+      "id": "29b8c8ab-51ae-4d60-89b9-cde1d6883915",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168147774,
+      "outputEnglish": "How are you feeling today? Do you feel any pain? Did the medication I gave you earlier work?"
+    },
+    {
+      "id": "c2f1ecdd-ec25-4710-a799-01dcb5416b6c",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168159209,
+      "outputEnglish": "I am here to help. Please tell me what you would like me to translate now."
+    },
+    {
+      "id": "a20cbe96-db48-4b36-a201-eaa23cddfa6e",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168160499,
+      "outputEnglish": "unclear"
+    },
+    {
+      "id": "977fd2dc-5687-496e-9ff5-bf6ff74c1b43",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168174599,
+      "outputEnglish": "I still feel some pain, no doubt, but it's a little better."
+    },
+    {
+      "id": "0bfd8a83-f231-4bba-95dd-31e1d29489e0",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766168200354,
+      "outputEnglish": "Okay, perhaps we can adjust the dosage a little; the medication might work in the future."
+    },
+    {
+      "id": "99c59beb-1216-497d-b82f-8d7966ab3450",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168220069,
+      "outputEnglish": "Perhaps we can do some imaging; that will help to better understand the underlying problem."
+    },
+    {
+      "id": "ee68755d-d1c3-4440-bbb6-d6e2ab6207d3",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168242837,
+      "outputEnglish": "I think it's better if we do some imaging. I mean, I prefer it; it's much clearer to understand what the problem is."
+    },
+    {
+      "id": "56e59426-f5e4-4883-b2f1-85467aae4ce6",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": false,
+      "timestamp": 1766168257396,
+      "outputEnglish": "Okay, I'll order some X-rays for you."
+    },
+    {
+      "id": "666a2594-f9e9-4f13-946a-28095e2bd4ff",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766168269161,
+      "outputEnglish": "Or perhaps we can request an MRI; that would be better."
+    }
+  ],
+  "savedAt": "2025-12-19T18:18:06.602Z"
+}

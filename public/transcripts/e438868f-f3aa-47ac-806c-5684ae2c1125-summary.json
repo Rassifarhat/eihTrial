@@ -1,0 +1,19 @@
+{
+  "chief_complaint": "Back pain (follow-up inquiry)",
+  "history_of_present_illness": "unknown",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Patient's response to the question about ongoing back pain",
+    "Onset and duration of the back pain",
+    "Severity (pain scale) and character of the pain",
+    "Exact location and any radiation of the pain",
+    "Aggravating and relieving factors",
+    "Associated symptoms (numbness, weakness, bowel/bladder changes, fever)",
+    "Prior treatments, medications taken, and response",
+    "Physical exam findings",
+    "Any imaging or diagnostic test results",
+    "Relevant past medical history, current medications, allergies, and social history"
+  ]
+}

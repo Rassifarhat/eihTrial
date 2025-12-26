@@ -1,0 +1,112 @@
+{
+  "sessionId": "5b9ae6d2-518c-4632-8e2f-a4ac17350467",
+  "doctorLanguage": "english",
+  "patientLanguage": "hindi",
+  "entries": [
+    {
+      "id": "6bc90065-5af1-48b6-8fbe-a3469d93eae2",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.",
+      "backTranslationPending": false,
+      "timestamp": 1766144606056,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi."
+    },
+    {
+      "id": "99253d72-d634-4c30-896f-2c33c348124a",
+      "direction": "patient-to-doc",
+      "originalText": "तो आपके पास एक छोटी सी फ्रैक्चर है, जो डिस्प्लेस नहीं हुई है, यानि वो अपनी जगह पर ही है, तो यह एक अच्छा फ्रैक्चर है, और हम इसके लिए एक प्लास्टर लगाएंगे, पैर पर, और इसे एक महीने तक वहीं रखना होगा। मैं आपको इसके लिए तीन हफ्तों का सर्टिफिकेट दूँगा, और फिर आप तीन हफ्ते के बाद वापस आएँ, तब हम देखेंगे कि प्लास्टर हटाना है या नहीं, और देखेंगे कि कैसा लग रहा है।तो आपके पास एक छोटी सी फ्रैक्चर है, जो डिस्प्लेस नहीं हुई है, यानि वो अपनी जगह पर ही है, तो यह एक अच्छा फ्रैक्चर है, और हम इसके लिए एक प्लास्टर लगाएंगे, पैर पर, और इसे एक महीने तक वहीं रखना होगा। मैं आपको इसके लिए तीन हफ्तों का सर्टिफिकेट दूँगा, और फिर आप तीन हफ्ते के बाद वापस आएँ, तब हम देखेंगे कि प्लास्टर हटाना है या नहीं, और देखेंगे कि कैसा लग रहा है।",
+      "backTranslationPending": false,
+      "timestamp": 1766144648908,
+      "backTranslatedEnglish": "So you have a small fracture which is not displaced, meaning it is in its place, so this is a good fracture, and we will apply a plaster cast for it on the leg, and it must be kept like that for one month. I will give you a three-week certificate for this, and then you should come back after three weeks; then we will see whether to remove the plaster or not, and see how it is looking.\n\nSo you have a small fracture which is not displaced, meaning it is in its place, so this is a good fracture, and we will apply a plaster cast for it on the leg, and it must be kept like that for one month. I will give you a three-week certificate for this, and then you should come back after three weeks; then we will see whether to remove the plaster or not, and see how it is looking."
+    },
+    {
+      "id": "68baffb3-ca80-437f-9848-7842af34d4ab",
+      "direction": "doc-to-patient",
+      "originalText": "Okay. So, you need to go to the emergency room, sir.Okay. So, you need to go to the emergency room, sir.",
+      "backTranslationPending": false,
+      "timestamp": 1766144676334,
+      "backTranslatedEnglish": "Okay. So, you need to go to the emergency room, sir.Okay. So, you need to go to the emergency room, sir."
+    },
+    {
+      "id": "35b2094e-2fdb-4b64-973a-88761484f954",
+      "direction": "patient-to-doc",
+      "originalText": "You need to take leave, right?You need to take leave, right?",
+      "backTranslationPending": false,
+      "timestamp": 1766144686298,
+      "backTranslatedEnglish": "You need to take leave, right?You need to take leave, right?"
+    },
+    {
+      "id": "f112aaf3-8078-44a7-9d1a-1298cd7c88f0",
+      "direction": "doc-to-patient",
+      "originalText": "हाँ, मैं आपको तीन हफ्तों का मेडिकल लीव दूँगा।हाँ, मैं आपको तीन हफ्तों का मेडिकल लीव दूँगा।",
+      "backTranslationPending": false,
+      "timestamp": 1766144695010,
+      "backTranslatedEnglish": "Yes, I will give you three weeks of medical leave. Yes, I will give you three weeks of medical leave."
+    },
+    {
+      "id": "f37eefb1-17cc-4b89-bbdc-ddd08ec58dbd",
+      "direction": "patient-to-doc",
+      "originalText": "Okay, I will take care of the details starting from today — just cast it and that’s all.Okay, I will take care of the details starting from today — just cast it and that’s all.",
+      "backTranslationPending": false,
+      "timestamp": 1766144705639,
+      "backTranslatedEnglish": "Okay, I will take care of the details starting from today — just cast it and that’s all.Okay, I will take care of the details starting from today — just cast it and that’s all."
+    },
+    {
+      "id": "a7c7fd05-26f0-448e-9282-f6ead05ea764",
+      "direction": "doc-to-patient",
+      "originalText": "हाँ, क्या आप पूछ रहे हैं कि आपको सर्जरी की ज़रूरत है या नहीं?हाँ, क्या आप पूछ रहे हैं कि आपको सर्जरी की ज़रूरत है या नहीं?",
+      "backTranslationPending": false,
+      "timestamp": 1766144717634,
+      "backTranslatedEnglish": "Yes, are you asking whether you need surgery or not? Yes, are you asking whether you need surgery or not?"
+    },
+    {
+      "id": "814f79ee-3366-4d9d-b78e-1c616ceb1d60",
+      "direction": "patient-to-doc",
+      "originalText": "यह सिर्फ प्लास्टर है, इलाज सिर्फ प्लास्टर से होगा, एक प्लास्टर तीन हफ्तों के लिए, आपको सर्जरी की ज़रूरत नहीं है।यह सिर्फ प्लास्टर है, इलाज सिर्फ प्लास्टर से होगा, एक प्लास्टर तीन हफ्तों के लिए, आपको सर्जरी की ज़रूरत नहीं है।",
+      "backTranslationPending": false,
+      "timestamp": 1766144733858,
+      "backTranslatedEnglish": "This is just a plaster cast, the treatment will be only with a plaster cast, one plaster cast for three weeks, you do not need surgery. This is just a plaster cast, the treatment will be only with a plaster cast, one plaster cast for three weeks, you do not need surgery."
+    },
+    {
+      "id": "71e6f862-4985-4669-9b24-e4c84c9058b6",
+      "direction": "patient-to-doc",
+      "originalText": "Sir, I need to go to duty in two days, that’s all, finished.Sir, I need to go to duty in two days, that’s all, finished.",
+      "backTranslationPending": false,
+      "timestamp": 1766144748165,
+      "backTranslatedEnglish": "Sir, I need to go to duty in two days, that's all, finished. Sir, I need to go to duty in two days, that's all, finished."
+    },
+    {
+      "id": "a230388a-7438-4aac-97d7-fe3485ef0b65",
+      "direction": "doc-to-patient",
+      "originalText": "ठीक है, तो आपको सिर्फ दो दिन के लिए मेडिकल लीव चाहिए।ठीक है, तो आपको सिर्फ दो दिन के लिए मेडिकल लीव चाहिए।",
+      "backTranslationPending": false,
+      "timestamp": 1766144758470,
+      "backTranslatedEnglish": "Okay, so you need medical leave for just two days. Okay, so you need medical leave for just two days."
+    },
+    {
+      "id": "eaccd5b1-074a-4773-93af-8d151efb9b0f",
+      "direction": "patient-to-doc",
+      "originalText": "Okay, after two days, after two days, okay, okay, it’s not a big injury, it’s minor.Okay, after two days, after two days, okay, okay, it’s not a big injury, it’s minor.",
+      "backTranslationPending": false,
+      "timestamp": 1766144769238,
+      "backTranslatedEnglish": "Okay, after two days, after two days, okay, okay, it’s not a big injury, it’s minor. Okay, after two days, after two days, okay, okay, it’s not a big injury, it’s minor."
+    },
+    {
+      "id": "86dd8d32-d8ff-4937-bffc-058aba0376de",
+      "direction": "patient-to-doc",
+      "originalText": "It’s minor.It’s minor.",
+      "backTranslationPending": false,
+      "timestamp": 1766144770254,
+      "backTranslatedEnglish": "It's minor. It's minor."
+    },
+    {
+      "id": "587fd8b0-c0a7-4246-9e6b-6c9300c09d02",
+      "direction": "doc-to-patient",
+      "originalText": "यह बड़ी फ्रैक्चर नहीं है, ये एक छोटी सी फ्रैक्चर है, और यह कास्ट से पूरी तरह ठीक हो जाएगा, आपको सर्जरी की ज़रूरत नहीं है।यह बड़ी फ्रैक्चर नहीं है, ये एक छोटी सी फ्रैक्चर है, और यह कास्ट से पूरी तरह ठीक हो जाएगा, आपको सर्जरी की ज़रूरत नहीं है।",
+      "backTranslationPending": false,
+      "timestamp": 1766144785304,
+      "backTranslatedEnglish": "This is not a major fracture, it's a small fracture, and it will heal completely with a cast; you do not need surgery.\nThis is not a major fracture, it's a small fracture, and it will heal completely with a cast; you do not need surgery."
+    }
+  ],
+  "savedAt": "2025-12-19T11:46:34.788Z"
+}

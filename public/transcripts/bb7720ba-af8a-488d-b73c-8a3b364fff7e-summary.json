@@ -1,0 +1,19 @@
+{
+  "chief_complaint": "Patient expresses that no water should touch an unspecified area due to concern for skin problems.",
+  "history_of_present_illness": "Patient repeatedly states: 'No water should touch it at all... otherwise you may have skin problems, so you must avoid water at all costs.' No details provided about what 'it' is, when this started, associated symptoms, prior care, or relevant medical history.",
+  "assessment": "Insufficient information to make a clinical assessment. The patient is concerned that water exposure to an unspecified area will cause skin problems.",
+  "plan": "No clinician plan documented in the conversation. The patient advises avoiding water contact with the unspecified area; interpreter acknowledged the statement.",
+  "follow_up": "unknown",
+  "missing_information": [
+    "What 'it' refers to (anatomical location or device)",
+    "Onset and duration of the problem",
+    "Specific symptoms (pain, rash, drainage, etc.)",
+    "Severity and progression",
+    "Any prior treatments or dressings",
+    "Medical history, medications, allergies",
+    "Physical exam findings",
+    "Clinician recommendations or orders",
+    "Need for wound care instructions or protective measures",
+    "Follow-up timeframe or contingency plan"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "unknown",
+  "assessment": "unknown",
+  "plan": "unknown",
+  "follow_up": "unknown",
+  "missing_information": [
+    "No conversation content provided",
+    "chief complaint / presenting symptom",
+    "onset and duration of symptoms",
+    "symptom characteristics (severity, location, quality, alleviating/aggravating factors)",
+    "associated symptoms / review of systems",
+    "vital signs",
+    "current medications",
+    "allergies",
+    "past medical history",
+    "past surgical history",
+    "physical exam findings",
+    "diagnostic test results (labs, imaging)",
+    "social history (tobacco, alcohol, occupation)",
+    "family history",
+    "current treatments or interventions"
+  ]
+}

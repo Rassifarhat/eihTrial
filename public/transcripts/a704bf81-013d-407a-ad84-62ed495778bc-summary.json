@@ -1,0 +1,23 @@
+{
+  "chief_complaint": "Severe pain limiting normal daily activities",
+  "history_of_present_illness": "Patient reports that the pain is very severe and prevents them from carrying out normal daily activities. Patient and clinician are using an interpreter service (English/Arabic). Patient expresses desire for medication to relieve the pain.",
+  "assessment": "Severe pain causing functional limitation. Etiology, location, duration, and other characteristics of the pain are not provided in the conversation.",
+  "plan": "Offer analgesic medication as requested by patient after clinical evaluation. Perform targeted assessment including pain location, onset, duration, quality, severity (pain scale), aggravating/relieving factors, review of current medications, allergies, past medical history, physical exam, and vital signs. Determine appropriate analgesic and dosing based on evaluation and allergies. Arrange further workup or referrals as indicated by findings.",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Pain location",
+    "Onset and duration of pain",
+    "Pain quality (e.g., sharp, dull, burning)",
+    "Pain severity on a numeric scale",
+    "Aggravating and relieving factors",
+    "Associated symptoms (fever, numbness, weakness, etc.)",
+    "Prior treatments or medications tried for this pain",
+    "Current medication list",
+    "Allergies (especially drug allergies)",
+    "Past medical history and relevant surgical history",
+    "Physical exam findings",
+    "Vital signs",
+    "Social history (e.g., functional baseline, occupation)",
+    "Need for imaging or labs"
+  ]
+}

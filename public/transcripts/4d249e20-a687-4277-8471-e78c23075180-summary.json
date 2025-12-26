@@ -1,0 +1,25 @@
+{
+  "chief_complaint": "unknown",
+  "history_of_present_illness": "Interpreter present. Patient asked, \"How are you now? Are you feeling any pain?\" No specific symptom description, onset, location, severity, or duration provided.",
+  "assessment": "No clinical assessment can be made from the available conversation due to lack of medical history and symptom detail.",
+  "plan": "No plan documented. Further history and examination are required to formulate assessment and management.",
+  "follow_up": "unknown",
+  "missing_information": [
+    "Reason for visit / chief complaint",
+    "Detailed symptom description (location, quality, severity)",
+    "Onset and duration of symptoms",
+    "Associated symptoms",
+    "Exacerbating or relieving factors",
+    "Prior treatments or interventions for current issue",
+    "Current medications",
+    "Allergies",
+    "Past medical history",
+    "Surgical history",
+    "Family history",
+    "Social history (tobacco, alcohol, substance use, living situation)",
+    "Vital signs",
+    "Physical exam findings",
+    "Diagnostic test results (labs, imaging) if any",
+    "Preferred language confirmed (Tagalog inferred but not explicitly confirmed as patient's preference)"
+  ]
+}

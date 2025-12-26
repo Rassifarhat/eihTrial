@@ -1,0 +1,31 @@
+{
+  "sessionId": "23837cf3-d6b1-42e6-aff4-8d0b329a7991",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "8d16db5f-5802-442a-9586-626bd1a63eeb",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.",
+      "backTranslationPending": false,
+      "timestamp": 1766082085439,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic. This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic."
+    },
+    {
+      "id": "cf0b18fa-d212-4fcc-b9f1-d05846acb201",
+      "direction": "patient-to-doc",
+      "originalText": "مرحباً، كيف حالك اليوم؟مرحباً، كيف حالك اليوم؟",
+      "backTranslationPending": false,
+      "timestamp": 1766082103425,
+      "backTranslatedEnglish": "Hello, how are you today?Hello, how are you today?"
+    },
+    {
+      "id": "b10d5363-d3ae-41fa-9c44-7de6db4603fc",
+      "direction": "doc-to-patient",
+      "originalText": "Good, but I'm still experiencing pain in my back.Good, but I'm still experiencing pain in my back.",
+      "backTranslationPending": true,
+      "timestamp": 1766082116541
+    }
+  ],
+  "savedAt": "2025-12-18T18:21:58.864Z"
+}

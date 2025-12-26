@@ -1,0 +1,88 @@
+{
+  "sessionId": "a704bf81-013d-407a-ad84-62ed495778bc",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "b7bbf6c1-89bd-435a-a15d-8cf56846874d",
+      "direction": "doc-to-patient",
+      "originalText": "Hey there! I'm doing great, thanks for asking! How about you? How's your day going so far?Hey there! I'm doing great, thanks for asking! How about you? How's your day going so far?",
+      "backTranslationPending": false,
+      "timestamp": 1766127727029,
+      "backTranslatedEnglish": "Hey there! I'm doing great, thanks for asking! How about you? How's your day going so far?Hey there! I'm doing great, thanks for asking! How about you? How's your day going so far?"
+    },
+    {
+      "id": "d55c5366-5bd0-4017-b9c4-97ddfba87dcd",
+      "direction": "patient-to-doc",
+      "originalText": "Of course! I’m here to help with interpretation whenever you need. Just let me know what you’d like to translate or interpret, and I’ll assist right away.Of course! I’m here to help with interpretation whenever you need. Just let me know what you’d like to translate or interpret, and I’ll assist right away.",
+      "backTranslationPending": false,
+      "timestamp": 1766127739806,
+      "backTranslatedEnglish": "Of course! I’m here to help with interpretation whenever you need. Just let me know what you’d like to translate or interpret, and I’ll assist right away.Of course! I’m here to help with interpretation whenever you need. Just let me know what you’d like to translate or interpret, and I’ll assist right away."
+    },
+    {
+      "id": "334b4ab5-e3d1-45f8-897a-399c6c15a72f",
+      "direction": "doc-to-patient",
+      "originalText": "I understand what you're asking. Right now, I'm happy to help with interpretation. If you'd like me to translate something from English to Arabic or the other way around, just let me know what you need translated.I understand what you're asking. Right now, I'm happy to help with interpretation. If you'd like me to translate something from English to Arabic or the other way around, just let me know what you need translated.",
+      "backTranslationPending": false,
+      "timestamp": 1766127789877,
+      "backTranslatedEnglish": "I understand what you're asking. Right now, I'm happy to help with interpretation. If you'd like me to translate something from English to Arabic or the other way around, just let me know what you need translated.I understand what you're asking. Right now, I'm happy to help with interpretation. If you'd like me to translate something from English to Arabic or the other way around, just let me know what you need translated."
+    },
+    {
+      "id": "73cb7e32-2fe2-4745-afc9-de1733a9e8f5",
+      "direction": "patient-to-doc",
+      "originalText": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.",
+      "backTranslationPending": false,
+      "timestamp": 1766127811391,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic.This is an interpreter service. I will translate between English and Arabic. Please speak normally in Arabic."
+    },
+    {
+      "id": "d99da26a-c3d1-48ca-b5df-9499bfe1e7d3",
+      "direction": "patient-to-doc",
+      "originalText": "Sure, please go ahead and speak, and I will translate.Sure, please go ahead and speak, and I will translate.",
+      "backTranslationPending": false,
+      "timestamp": 1766127819407,
+      "backTranslatedEnglish": "Sure, please go ahead and speak, and I will translate.Sure, please go ahead and speak, and I will translate."
+    },
+    {
+      "id": "54ead007-1b17-41a8-9db8-3328f1d87cbb",
+      "direction": "doc-to-patient",
+      "originalText": "كيف حالك اليوم؟كيف حالك اليوم؟",
+      "backTranslationPending": false,
+      "timestamp": 1766127828730,
+      "backTranslatedEnglish": "How are you today? How are you today?"
+    },
+    {
+      "id": "509c55bd-f5f2-4086-8f4f-6a669f67b702",
+      "direction": "patient-to-doc",
+      "originalText": "And this pain is very severe, and I can't go about my normal daily activities.And this pain is very severe, and I can't go about my normal daily activities.",
+      "backTranslationPending": false,
+      "timestamp": 1766127845545,
+      "backTranslatedEnglish": "And this pain is very severe, and I can't go about my normal daily activities.And this pain is very severe, and I can't go about my normal daily activities."
+    },
+    {
+      "id": "2bd41138-ff36-4ba8-9b53-177a573054ab",
+      "direction": "doc-to-patient",
+      "originalText": "من فضلك، أخبرني ما الذي تريد ترجمته الآن.من فضلك، أخبرني ما الذي تريد ترجمته الآن.",
+      "backTranslationPending": false,
+      "timestamp": 1766127860059,
+      "backTranslatedEnglish": "Please, tell me what you want translated now. Please, tell me what you want translated now."
+    },
+    {
+      "id": "de15a814-7fd8-4357-91aa-19d9a17366f7",
+      "direction": "doc-to-patient",
+      "originalText": "من فضلك أكمل ما تريد قمن فضلك أكمل ما تريد ق",
+      "backTranslationPending": false,
+      "timestamp": 1766127868530,
+      "backTranslatedEnglish": "Please complete what you want q Please complete what you want q"
+    },
+    {
+      "id": "19bb24df-31a8-4604-8e1b-32e584849712",
+      "direction": "patient-to-doc",
+      "originalText": "ربما يمكنني أن أعطيك بعض الأدوية لتخفيف الألم، وآمل أن تساعد في تخفيف بعض من معاناتك.ربما يمكنني أن أعطيك بعض الأدوية لتخفيف الألم، وآمل أن تساعد في تخفيف بعض من معاناتك.",
+      "backTranslationPending": false,
+      "timestamp": 1766127878316,
+      "backTranslatedEnglish": "Perhaps I can give you some medication to relieve the pain, and I hope it will help alleviate some of your suffering. Perhaps I can give you some medication to relieve the pain, and I hope it will help alleviate some of your suffering."
+    }
+  ],
+  "savedAt": "2025-12-19T07:05:03.462Z"
+}

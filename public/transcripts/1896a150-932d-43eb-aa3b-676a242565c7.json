@@ -1,0 +1,36 @@
+{
+  "sessionId": "1896a150-932d-43eb-aa3b-676a242565c7",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "e57b52f7-c96f-4bca-818c-ada6c928f107",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766165064450,
+      "outputEnglish": "Hello, how can I help you?"
+    },
+    {
+      "id": "6c5479da-2024-4d04-b43b-9c11e6ccf7cf",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "timestamp": 1766165077765,
+      "outputEnglish": "I have had a pain in my back for about a week and it hasn't improved with medication."
+    },
+    {
+      "id": "6f1d1fee-0221-4de3-8adb-af392a57a4bc",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "timestamp": 1766165098337,
+      "outputEnglish": "Perhaps we should increase the dose—what do you think?"
+    },
+    {
+      "id": "1aee5f93-0c7e-4f5d-9f03-ae4414f2d569",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "timestamp": 1766165121039,
+      "outputEnglish": "I prefer that we do more tests, maybe there's something in my back, a disc or something else that's causing the problem."
+    }
+  ],
+  "savedAt": "2025-12-19T17:25:45.836Z"
+}

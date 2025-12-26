@@ -1,0 +1,22 @@
+{
+  "chief_complaint": "Pain in the back",
+  "history_of_present_illness": "Patient reports ongoing back pain. No additional details provided regarding onset, duration, location, quality, severity, radiation, aggravating or relieving factors, associated symptoms, prior treatments, or functional impact.",
+  "assessment": "Back pain (unspecified). Insufficient information to determine acute vs chronic etiology or identify red flags.",
+  "plan": "Obtain targeted history (onset, duration, severity, radiation, neurologic symptoms, prior treatments, trauma), perform physical examination including neurologic and musculoskeletal assessment, assess for red flags (fever, bowel/bladder dysfunction, progressive neuro deficit), consider imaging or labs if indicated, and initiate symptomatic management based on findings.",
+  "follow_up": "unknown",
+  "missing_information": [
+    "onset and duration of pain",
+    "pain severity (e.g., scale)",
+    "pain quality and exact location",
+    "radiation to legs or other areas",
+    "presence of numbness, tingling, or weakness",
+    "bowel or bladder dysfunction",
+    "recent trauma or injury",
+    "fever or systemic symptoms",
+    "prior treatments or medications for this pain",
+    "current medications and allergies",
+    "impact on function/activities of daily living",
+    "vital signs and physical examination findings",
+    "imaging or prior diagnostic studies"
+  ]
+}

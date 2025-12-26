@@ -1,0 +1,40 @@
+{
+  "sessionId": "bd47cffb-eff6-4c3c-b230-b75880d61c8e",
+  "doctorLanguage": "english",
+  "patientLanguage": "hindi",
+  "entries": [
+    {
+      "id": "ecd5af15-5b86-4ae3-b2c4-0fe27f8e299e",
+      "direction": "doc-to-patient",
+      "originalText": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.",
+      "backTranslationPending": false,
+      "timestamp": 1766127946996,
+      "backTranslatedEnglish": "This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi.This is an interpreter service. I will translate between English and Hindi. Please speak normally in Hindi."
+    },
+    {
+      "id": "a68f6df9-0321-4588-b95a-a46ad192b1dd",
+      "direction": "patient-to-doc",
+      "originalText": "तो मैं आज आपकी कैसे मदद कर सकता हूँ?तो मैं आज आपकी कैसे मदद कर सकता हूँ?",
+      "backTranslationPending": false,
+      "timestamp": 1766127962777,
+      "backTranslatedEnglish": "So how can I help you today? So how can I help you today?"
+    },
+    {
+      "id": "65635e3d-64c5-4f80-856f-7d6f7b5021c8",
+      "direction": "doc-to-patient",
+      "originalText": "On both sides, it hurts to stretch.On both sides, it hurts to stretch.",
+      "backTranslationPending": false,
+      "timestamp": 1766127981485,
+      "backTranslatedEnglish": "On both sides, it hurts to stretch. On both sides, it hurts to stretch."
+    },
+    {
+      "id": "0ed4850a-39f5-4269-b3d0-4f1c71eba270",
+      "direction": "patient-to-doc",
+      "originalText": "ठीक है, तो शायद हम घुटनों के लिए कुछ एक्स-रे करा लें, और उम्मीद है कि हम पता लगा सकें कि समस्या क्या है।ठीक है, तो शायद हम घुटनों के लिए कुछ एक्स-रे करा लें, और उम्मीद है कि हम पता लगा सकें कि समस्या क्या है।",
+      "backTranslationPending": false,
+      "timestamp": 1766128000984,
+      "backTranslatedEnglish": "Okay, so maybe we'll get some X-rays of the knees, and hopefully we can find out what the problem is.\nOkay, so maybe we'll get some X-rays of the knees, and hopefully we can find out what the problem is."
+    }
+  ],
+  "savedAt": "2025-12-19T07:06:55.532Z"
+}

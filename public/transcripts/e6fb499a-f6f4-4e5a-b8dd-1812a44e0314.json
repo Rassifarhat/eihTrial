@@ -1,0 +1,15 @@
+{
+  "sessionId": "e6fb499a-f6f4-4e5a-b8dd-1812a44e0314",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "b7e048f0-706d-4f2d-8a7f-615a5987eb66",
+      "direction": "patient-to-doc",
+      "outputPending": true,
+      "inputPending": true,
+      "timestamp": 1766757193945
+    }
+  ],
+  "savedAt": "2025-12-26T13:53:17.772Z"
+}

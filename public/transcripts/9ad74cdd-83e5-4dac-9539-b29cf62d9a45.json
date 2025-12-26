@@ -1,0 +1,32 @@
+{
+  "sessionId": "9ad74cdd-83e5-4dac-9539-b29cf62d9a45",
+  "doctorLanguage": "english",
+  "patientLanguage": "arabic",
+  "entries": [
+    {
+      "id": "72b07095-d968-4d7e-bfc2-3e5aa6629f38",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766169013852,
+      "outputEnglish": "Hello"
+    },
+    {
+      "id": "86ed7e14-30a2-4fc4-b5f8-a73cebc75ada",
+      "direction": "doc-to-patient",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766169022022,
+      "outputEnglish": "How are you today?"
+    },
+    {
+      "id": "ce43f9b8-c42b-4dd5-a5c2-fb238df637d3",
+      "direction": "patient-to-doc",
+      "outputPending": false,
+      "inputPending": true,
+      "timestamp": 1766169031275,
+      "outputEnglish": "I still feel pain in my back."
+    }
+  ],
+  "savedAt": "2025-12-19T18:30:35.179Z"
+}
